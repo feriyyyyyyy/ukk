@@ -1,0 +1,134 @@
+/* Body content styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f4f8; /* Background cerah */
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.top-content {
+    padding: 30px 20px;
+    text-align: center;
+    background-color: #ffffff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.info h2 {
+    font-size: 22px;
+    font-weight: bold;
+    color: #2c3e50; /* Warna gelap untuk judul */
+}
+
+.info h3 {
+    font-size: 16px;
+    color: #7f8c8d; /* Warna abu-abu terang */
+}
+
+.info-profile {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.table-profile {
+    background-color: #ecf0f1; /* Latar belakang cerah */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: left;
+    transition: all 0.3s ease;
+}
+
+.table-profile:hover {
+    background-color: #bdc3c7; /* Hover efek dengan warna lebih gelap */
+}
+
+.table-profile .profile-img img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 3px solid #3498db; /* Border biru pada gambar profil */
+}
+
+.table-profile .profile-item {
+    margin: 8px 0;
+    color: #34495e;
+}
+
+.chart-info {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 20px;
+    color: #2c3e50;
+}
+
+.chart-section {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.chart-container {
+    width: 45%;
+    height: 250px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.chart-legend {
+    width: 45%;
+    text-align: left;
+}
+
+.chart-legend ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.chart-section p {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #7f8c8d;
+}
+
+/* Footer styles */
+footer.footer {
+    background-color: #2c3e50; /* Gelap untuk footer */
+    color: white;
+    padding: 20px;
+    text-align: center;
+    border-top: 4px solid #3498db; /* Border biru di atas footer */
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.social-icons {
+    display: flex;
+}
+
+.social-icons a {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.social-icons a:hover {
+    transform: scale(1.1); /* Efek hover untuk ikon sosial */
+}
+
+.social-icon-1 img, .social-icon img {
+    width: 20px;
+    height: auto;
+}

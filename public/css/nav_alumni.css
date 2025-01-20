@@ -1,0 +1,81 @@
+/* Navbar styles */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1e2a47; /* Warna biru gelap */
+    padding: 20px 30px;
+    border-bottom: 4px solid #00aaff; /* Garis bawah biru terang */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+}
+
+.profile .logo img {
+    height: 35px;
+    width: auto;
+}
+
+.profile .Username {
+    color: #ffffff;
+    margin-left: 12px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.menu {
+    display: flex;
+    gap: 20px;
+}
+
+.menu-item button {
+    background-color: #5027c4; /* Tombol biru terang */
+    color: white;
+    padding: 12px 18px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.menu-item button:hover {
+    background-color: #5d35bb; /* Biru lebih gelap saat hover */
+    transform: translateY(-3px); /* Efek tombol terangkat */
+}
+
+.menu_dropdown {
+    display: none;
+}
+
+.burger-icon {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.burger-icon img {
+    width: 25px;
+    height: auto;
+}
+
+.dropdown {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.dropdown .dropdown-icon {
+    background: none;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+}
+
+.dropdown .dropdown-icon img {
+    width: 20px;
+    height: auto;
+}
