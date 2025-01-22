@@ -234,19 +234,68 @@ body {
     font-size: 14px;
 }
 
+/* Gaya umum untuk kontainer */
 .chart-section {
-    background-color: #fff;
-    padding: 15px;
-    border-radius: 10px;
-    margin-bottom: 20px;
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 800px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    text-align: center;
 }
 
+/* Judul untuk setiap diagram */
 .chart-section h3 {
-    font-size: 18px;
-    margin-bottom: 10px;
+    text-align: center;
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 20px;
+    font-family: 'Arial', sans-serif;
 }
+
+/* Teks informasi tambahan */
+.chart-section p {
+    text-align: center;
+    font-size: 1em;
+    color: #555;
+    margin-top: 10px;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Gaya kanvas agar responsif */
+.chart-section canvas {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Gaya tambahan untuk seluruh halaman */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* Tambahan untuk tata letak responsif */
+@media (max-width: 768px) {
+    .chart-section {
+        padding: 15px;
+    }
+
+    .chart-section h3 {
+        font-size: 1.2em;
+    }
+
+    .chart-section p {
+        font-size: 0.9em;
+    }
+}
+
 
 .footer {
     background-color: #333;

@@ -106,17 +106,7 @@
     </div>
     <script src="{{ asset('js/admin.js') }}"></script>
     <footer class="footer">
-        <div class="footer-content">
-            <p>Copyright © 2024-2027 Andika. Hak Cipta. All rights reserved.</p>
-            <div class="social-icons">
-                <a href="#" class="social-icon-1">
-                    <img src="{{ asset('images/tk.png') }}" alt="Logo">
-                </a>
-                <a href="#" class="social-icon">
-                    <img src="{{ asset('images/ig.jfif') }}" alt="Logo">
-                </a>
-            </div>
-        </div>
+       
     </footer>
 </body>
 

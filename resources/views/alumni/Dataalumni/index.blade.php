@@ -7,6 +7,7 @@
     <title>Halaman Alumni</title>
     <link rel="stylesheet" href="{{ asset('css/dataalumni.css') }}">
     <link rel="stylesheet" href="{{ asset('css/nav_alumni.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
@@ -17,7 +18,7 @@
             <div class="logo">
                 <img src="{{ asset('images/logo.png') }}" alt="Logo">
             </div>
-            <div class="Username">
+            <div class="username">
                 {{ Auth::user()->name }}
             </div>
         </div>

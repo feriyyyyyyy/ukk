@@ -6,63 +6,51 @@
     <title>Pengaturan Privasi Alumni</title>
     <link rel="stylesheet" href="{{ asset('css/nav_admin.css') }}">
     <link rel="stylesheet" href="{{ asset('css/program.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <style>
-        body {
-        
-            height: 800px;
-            display: flex;
-            flex-direction: column;
-            margin: 0;
-        }
-    </style>
 </head>
 <body>
-
+    <!-- Navigation Bar -->
     <nav>
-        <div class="profile">
-            <div class="logo">
-                <img src="{{ asset('images/logo.png') }}" alt="Logo">
+        <div class="nav-container">
+            <div class="profile">
+                <div class="logo">
+                    <img src="{{ asset('images/logo.png') }}" alt="Logo">
+                </div>
+                <div class="username">
+                    {{ Auth::user()->name }}           
+                </div>
             </div>
-            <div class="Username">
-                {{ Auth::user()->name }}           
-             </div>
-        </div>
-        <div class="menu">
-            <div class="menu-item">
+            <div class="menu">
                 <button onclick="window.location='{{ route('admin.dashboard') }}';">Home</button>
-            </div>
-            <div class="menu-item">
                 <button onclick="window.location='{{ route('admin.alumni.index') }}';">Data Alumni</button>
-            </div>
-            <div class="menu-item">
                 <button onclick="window.location='{{ route('admin.TracerKuliah.index') }}';">Tracer Kuliah</button>
+                <button onclick="window.location='{{ route('admin.TracerKerja.index') }}';">Tracer Kerja</button>
             </div>
-            <div class="menu-item">
-                <button onclick="window.location='{{ route('admin.TracerKerja.index') }}';">Tracer Kerja</button>            </div>
-        </div>
-        <div class="menu_dropdown">
-            <button class="burger-icon" id="burgerMenu">
-                <img src="{{ asset('icons/dropdown.png') }}" alt="Icons">
-            </button>
-            <ul class="dropdown" id="dropdownMenu">
-                <button onclick="window.location='{{ route('login') }}';" class="dropdown-icon">
+            <div class="menu-dropdown">
+                <button class="burger-icon" id="burgerMenu">
                     <img src="{{ asset('icons/dropdown.png') }}" alt="Icons">
                 </button>
-                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: inline;">
-                    @csrf
-                    <button type="submit" class="dropdown-icon">
-                        <img src="{{ asset('icons/logout.png') }}" alt="Logout Icon">
+                <ul class="dropdown" id="dropdownMenu">
+                    <button onclick="window.location='{{ route('login') }}';" class="dropdown-icon">
+                        <img src="{{ asset('icons/dropdown.png') }}" alt="Icons">
                     </button>
-                </form>
-            </ul>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: inline;">
+                        @csrf
+                        <button type="submit" class="dropdown-icon">
+                            <img src="{{ asset('icons/logout.png') }}" alt="Logout Icon">
+                        </button>
+                    </form>
+                </ul>
+            </div>
         </div>
     </nav>
- 
-    <div class="container">
+
+    <!-- Main Content -->
+    <div class="content-container">
         <h1>Program Keahlian</h1>
-        <div class="tmbh">
-            <a href="{{ route('program.create') }}" >Tambah Program Keahlian</a>
+        <div class="add-program-btn">
+            <a href="{{ route('program.create') }}">Tambah Program Keahlian</a>
         </div>
         <table class="table">
             <thead>
@@ -94,19 +82,7 @@
             </tbody>
         </table>
     </div>
+
     <script src="{{ asset('js/admin.js') }}"></script>
-    <footer class="footer">
-        <div class="footer-content">
-            <p>Copyright © 2024-2027 Andika. Hak Cipta. All rights reserved.</p>
-            <div class="social-icons">
-                <a href="#" class="social-icon-1">
-                    <img src="{{ asset('images/tk.png') }}" alt="Logo">
-                </a>
-                <a href="#" class="social-icon">
-                    <img src="{{ asset('images/ig.jfif') }}" alt="Logo">
-                </a>
-            </div>
-        </div>
-    </footer>
 </body>
 </html>

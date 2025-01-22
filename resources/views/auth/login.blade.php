@@ -131,23 +131,6 @@
             </div>
             <button type="submit">Login</button>
         </form>
-
-        <p>Or login with:</p>
-        <div class="social-login">
-            <a href="">
-                <img src="{{ asset('icons/gogle.png') }}" alt="Google Login">
-            </a>
-            <a href="">
-                <img src="{{ asset('icons/facebook.png') }}" alt="Facebook Login">
-            </a>
-            <a href="">
-                <img src="{{ asset('icons/apple.png') }}" alt="Apple Login">
-            </a>
-        </div>
-
-        <div class="extra-links">
-            <p>Don't have an account? <a href="{{ route('register') }}">Register</a></p>
-        </div>
     </div>
 
     <script>

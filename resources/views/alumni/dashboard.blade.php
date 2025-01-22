@@ -93,36 +93,60 @@
             </div>
         </div>
     </div>
-
-    <!-- Alumni Data Charts -->
-    <div class="chart-info">
-        <h3>Diagram Data Alumni</h3>
+<section class="charts-section">
+    <div class="chart-card">
+        <h4>Data Alumni</h4>
+        <canvas id="chartAlumni"></canvas>
+        <p>Jumlah: 600</p>
     </div>
-    <div class="chart-section">
-        <div class="chart-container">
-            <canvas id="tracerChart"></canvas>
-        </div>
-        <div class="chart-legend">
-            <ul id="legendList"></ul>
-            <p>Jumlah Alumni: 600</p>
-        </div>
+    <div class="chart-card">
+        <h4>Data Pekerjaan</h4>
+        <canvas id="chartPekerjaan"></canvas>
+        <p>Jumlah: 600</p>
     </div>
+</section>
+<script src="{{ asset('js/alumni.js') }}"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    const configChart = (ctx, label, data, colors) => {
+        new Chart(ctx, {
+            type: 'doughnut', // Ubah menjadi doughnut atau pie sesuai kebutuhan
+            data: {
+                labels: ['2018', '2019', '2020', '2021', '2022'],
+                datasets: [{
+                    label: label,
+                    data: data,
+                    backgroundColor: colors, // Warna untuk tiap bagian
+                    borderColor: ['#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff'], // Border putih untuk tiap segmen
+                    borderWidth: 2,
+                    hoverOffset: 10
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(tooltipItem) {
+                                return tooltipItem.label + ': ' + tooltipItem.raw;
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    };
 
-    <div class="chart-info">
-        <h3>Diagram Data Pekerjaan Alumni</h3>
-    </div>
-    <div class="chart-section">
-        <div class="chart-container">
-            <canvas id="tracerChart-kerja"></canvas>
-        </div>
-        <div class="chart-legend">
-            <ul id="legendList-kerja"></ul>
-            <p>Jumlah Alumni: 600</p>
-        </div>
-    </div>
+    // Warna pastel untuk diagram
+    const alumniColors = ['#FFB3BA', '#FFCC99', '#FF9966', '#FF6699', '#FF3366'];
+    const pekerjaanColors = ['#B3E5FC', '#81D4FA', '#4FC3F7', '#29B6F6', '#0288D1'];
 
-    <script src="{{ asset('js/alumni.js') }}"></script>
-
+    configChart(document.getElementById('chartAlumni').getContext('2d'), 'Alumni', [120, 150, 200, 250, 300], alumniColors);
+    configChart(document.getElementById('chartPekerjaan').getContext('2d'), 'Pekerjaan', [80, 100, 150, 200, 250], pekerjaanColors);
+</script>
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-content">

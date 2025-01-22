@@ -79,3 +79,57 @@ nav {
     width: 20px;
     height: auto;
 }
+/* Navigation Styles */
+nav {
+    display: flex;
+    justify-content: space-between;
+    background-color: #1A2189;
+    padding: 20px;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
+}
+
+.username {
+    font-size: 18px;
+    color: #fff;
+}
+
+.menu {
+    display: flex;
+}
+
+.menu-item button {
+    background-color: #4782B2;
+    color: #fff;
+    padding: 10px 20px;
+    margin: 0 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.menu-item button:hover {
+    background-color: #70BFFF;
+}
+
+.menu_dropdown .burger-icon {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown {
+    display: none;
+}
+
+.dropdown.active {
+    display: block;
+}

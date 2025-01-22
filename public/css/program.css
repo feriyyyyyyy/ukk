@@ -1,134 +1,163 @@
-/* index */
-:root {
-    --text-color: #000000;
-    --bg-input-color: #4782B2;
-    --bg-input-2-color: #70BFFF;
-    --bg-1-color: #1A2189;
-    --bg-2-color: #FFFFFF;
-    --alert-btn-color: #DC060F;
+/* Resetting defaults */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-/* General container styles */
-.container {
-    margin-top: 20px;
-    background: #f0f8ff;
+
+/* General Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f5f7fa;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+/* Navigation Bar */
+nav {
+    background-color: #34495e;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
     padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    align-items: center;
+}
+
+.nav-container {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 50px;
+    margin-right: 10px;
+}
+
+.username {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.menu button {
+    background-color: #2980b9;
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    margin: 0 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.menu button:hover {
+    background-color: #3498db;
+}
+
+.menu-dropdown {
+    display: none;
+}
+
+.menu-dropdown .dropdown {
+    list-style-type: none;
+}
+
+.burger-icon {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .burger-icon {
+        display: block;
+        cursor: pointer;
+    }
+
+    .menu {
+        display: none;
+    }
+
+    .menu-dropdown {
+        display: block;
+    }
+}
+
+/* Content Styling */
+.content-container {
+    padding: 20px;
+    flex-grow: 1;
 }
 
 h1 {
-    text-align: center;
-    font-size: 32px;
+    font-size: 28px;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+.add-program-btn {
+    margin-bottom: 20px;
+}
+
+.add-program-btn a {
+    background-color: #27ae60;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 5px;
+    text-decoration: none;
     font-weight: bold;
-    color: var(--bg-1-color);
-    margin-top: 20px;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
-}
-.tmbh {
-    display: flex; /* Mengaktifkan Flexbox */
-    justify-content: flex-end; /* Mengatur tombol ke kanan */
-    margin-right: 20px; /* Menambahkan jarak dari sisi kanan */
-    margin-bottom: 10px;
+    transition: background-color 0.3s;
 }
 
-.tmbh a {
-    border: #000000 solid 2px;
-    border-radius: 15px;
-    background-color: var(--bg-input-color);
-    color: var(--bg-2-color);
-    text-align: center;
-    padding: 10px 20px; /* Menambahkan padding untuk ukuran tombol */
-    text-decoration: none; /* Menghilangkan garis bawah pada teks */
-    font-weight: bold; /* Membuat teks lebih tebal */
-    transition: background-color 0.3s ease; /* Menambahkan efek hover */
+.add-program-btn a:hover {
+    background-color: #2ecc71;
 }
 
-.tmbh a:hover {
-    background-color: var(--bg-1-color); /* Warna tombol saat hover */
-    color: var(--bg-2-color); /* Warna teks saat hover */
-}
-
-/* Table styles */
-table {
+/* Table Styling */
+.table {
     width: 100%;
     border-collapse: collapse;
-    background-color: #fff;
 }
 
-table thead {
-    background-color:var(--bg-1-color);
-    color: #fff;
-}
-
-table th, table td {
+.table th, .table td {
     padding: 12px;
-    text-align: center;
-    border: 1px solid #ddd;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
 }
 
-table tbody tr:nth-child(even) {
-    background: #f9f9f9;
+.table th {
+    background-color: #34495e;
+    color: white;
 }
 
-table tbody tr:hover {
-    background: #ffebf0;
+.table tr:hover {
+    background-color: #f1f1f1;
 }
 
-/* Button styles */
 .btn {
-    text-transform: uppercase;
-    border-radius: 8px; /* Membuat sudut tombol lebih membulat */
-    font-weight: bold;
-    padding: 10px 20px; /* Memberikan ruang lebih untuk ukuran tombol */
-    font-size: 14px; /* Ukuran teks yang lebih proporsional */
-    cursor: pointer;
-    transition: all 0.3s ease; /* Memberikan transisi halus untuk efek hover */
-    color: #fff; /* Warna teks default */
-    display: inline-block; /* Membuat tombol tidak mengambil satu baris penuh */
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: white;
 }
 
-/* Success Button */
-.btn-success {
-    background-color: var(--bg-input-color);
-    border: 1px solid #4e9a2a; /* Memberikan border halus */
-}
-
-.btn-success:hover {
-    background-color: var(--bg-1-color); /* Warna tombol saat hover */
-}
-
-/* Primary Button */
 .btn-primary {
-    background-color: var(--bg-input-color);
-    border: 1px solid #3e91ed; /* Memberikan border halus */
+    background-color: #2980b9;
 }
 
 .btn-primary:hover {
-    background-color: var(--bg-1-color); /* Warna tombol saat hover */
+    background-color: #3498db;
 }
 
-/* Danger Button */
 .btn-danger {
-    background-color: var(--alert-btn-color);
-    border: 1px solid #c1050d; /* Memberikan border halus */
+    background-color: #e74c3c;
 }
 
 .btn-danger:hover {
-    background-color: #a1030b; /* Warna lebih gelap saat hover */
+    background-color: #c0392b;
 }
-
-/* Hover and Active Effects */
-.btn:hover {
-    opacity: 0.95;
-    transform: scale(1.05); /* Memberikan efek membesar sedikit */
-}
-
-.btn:active {
-    transform: scale(0.98); /* Memberikan efek sedikit mengecil saat ditekan */
-    transition: transform 0.1s ease; /* Perubahan cepat untuk animasi active */
-}
-a{
-    text-decoration: none;
-}
-
-/* create */

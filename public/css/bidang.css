@@ -1,134 +1,138 @@
-:root {
-    --text-color: #000000;
-    --bg-input-color: #4782B2;
-    --bg-input-2-color: #70BFFF;
-    --bg--bg-1-color: #1A2189;
-    --bg-2-color: #FFFFFF;
-    --alert-btn-color: #DC060F;
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* Container */
-.container {
-    width: 100%;
-    margin: 30px auto;
-    background-color: var(--bg-color);
+/* Main body styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f2f3f5;
+    color: #333;
     padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
-/* Heading */
-.container h1 {
+h1 {
+    font-size: 28px;
     text-align: center;
-    font-size: 32px;
-    font-weight: bold;
-    color: var(--bg-input-color); /* Warna heading menggunakan --bg-input-color */
+    color: #34495e;
     margin-bottom: 20px;
-    text-shadow: 1px 1px 2px var(--text-color);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
 
-/* Button */
-.container .btn {
-    text-transform: uppercase;
-    padding: 10px 15px;
-    font-size: 14px;
-    font-weight: bold;
-    border-radius: 5px;
-    text-decoration: none;
-    color: var(--bg-2-color); /* Warna teks tombol */
-    display: inline-block;
-    margin-bottom: 15px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+/* Container for the table */
+.container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-.tmbh {
-    display: flex; /* Mengaktifkan Flexbox */
-    justify-content: flex-end; /* Mengatur tombol ke kanan */
-    margin-right: 20px; /* Menambahkan jarak dari sisi kanan */
-    margin-bottom: 10px;
-}
-
-.tmbh a {
-    border: #000000 solid 2px;
-    border-radius: 15px;
-    background-color: var(--bg-input-color);
-    color: var(--bg-2-color);
-    text-align: center;
-    padding: 10px 20px; /* Menambahkan padding untuk ukuran tombol */
-    text-decoration: none; /* Menghilangkan garis bawah pada teks */
-    font-weight: bold; /* Membuat teks lebih tebal */
-    transition: background-color 0.3s ease; /* Menambahkan efek hover */
-}
-
-.tmbh a:hover {
-    background-color: var(--bg-1-color); /* Warna tombol saat hover */
-    color: var(--bg-2-color); /* Warna teks saat hover */
-}
-
-.btn-primary {
-    background: var(--bg-input-2-color); /* Warna tombol primary */
-    border: none;
-}
- 
-.btn-primary:hover {
-    background: var(--bg-input-color); /* Warna hover tombol primary */
-}
-
-.btn-danger {
-    background-color: var(--alert-btn-color); /* Warna tombol danger */
-    border: none;
-}
-
-.btn-danger:hover {
-    background-color: #a1030b; /* Warna hover tombol danger */
-}
-
-.btn:hover {
-    transform: scale(1.05); /* Efek hover membesar */
-}
-
-/* Table */
 .table {
     width: 100%;
     border-collapse: collapse;
-    font-family: Arial, sans-serif;
     margin-top: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    overflow: hidden;
+    font-size: 16px;
+    color: #555;
 }
 
-.table th,
-.table td {
+.table th, .table td {
     padding: 12px 15px;
     text-align: center;
-    border-bottom: 1px solid var(--text-color); /* Border tabel */
+    border-bottom: 1px solid #ddd;
 }
 
 .table th {
-    background-color: var(--bg-input-color); /* Warna header tabel */
-    color: var(--bg-2-color); /* Warna teks header tabel */
+    background-color: #2c3e50;
+    color: #fff;
     font-weight: bold;
-    text-transform: uppercase;
 }
 
-.table tr:nth-child(even) {
-    background-color: var(--bg-color); /* Warna baris genap */
-}
-  /* Warna garis khusus untuk kolom kedua */
-.table td:nth-child(1), table th:nth-child(1) {
-    border-right: 1px solid var(--text-color); /* Border tabel */
-}
-  /* Warna garis khusus untuk kolom kedua */
-.table td:nth-child(2), table th:nth-child(2) {
-    border-right: 1px solid var(--text-color); /* Border tabel */
-}
-.table td:nth-child(3), table th:nth-child(3) {
-    border-right: 1px solid var(--text-color); /* Border tabel */
+.table td {
+    background-color: #ecf0f1;
 }
 
-.table td:last-child {
+.table tr:nth-child(even) td {
+    background-color: #f9f9f9;
+}
+
+/* Buttons */
+.btn {
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-success {
+    background-color: #27ae60;
+    color: white;
+}
+
+.btn-primary {
+    background-color: #3498db;
+    color: white;
+}
+
+.btn-danger {
+    background-color: #e74c3c;
+    color: white;
+}
+
+.btn:hover {
+    opacity: 0.8;
+}
+
+/* Footer */
+.footer {
+    background-color: #2c3e50;
+    color: white;
+    padding: 20px 0;
+    margin-top: auto;
+}
+
+.footer-content {
     text-align: center;
+    font-size: 14px;
+}
+
+.social-icons {
+    margin-top: 10px;
+}
+
+.social-icon-1, .social-icon {
+    margin: 0 10px;
+}
+
+.social-icon-1 img, .social-icon img {
+    width: 25px;
+    height: 25px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+
+    .table th, .table td {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .btn {
+        font-size: 12px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
 }

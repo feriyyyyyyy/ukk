@@ -6,83 +6,116 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Edit Program Keahlian</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap">
     <style>
-        body {
+        /* Reset dan Gaya Dasar */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-            height: 800px;
+        /* Gaya Body */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4f7fc;
+            color: #333;
             display: flex;
-            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
             margin: 0;
         }
 
-        :root {
-            --text-color: #000000;
-            --bg-input-color: #4782B2;
-            --bg-input-2-color: #70BFFF;
-            --bg-1-color: #1A2189;
-            --bg-2-color: #FFFFFF;
+        /* Kontainer Form */
+        .form-container {
+            background-color: #ffffff;
+            padding: 30px;
+            width: 100%;
+            max-width: 600px;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
         }
 
         h1 {
-            text-align: center;
-            font-size: 32px;
-            font-weight: bold;
-            color: var(--bg-1-color);
+            font-size: 28px;
+            font-weight: 600;
+            color: #2c3e50;
             margin-bottom: 20px;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+            text-transform: uppercase;
         }
 
-        .container {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #f9f9f9;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-
+        /* Form Group */
         .form-group {
-            margin-bottom: 15px;
+            margin-bottom: 20px;
         }
 
         .form-group label {
+            font-size: 16px;
+            font-weight: 500;
+            color: #333;
             display: block;
             margin-bottom: 8px;
-            font-weight: bold;
-            color: #333;
         }
 
         .form-group input,
         .form-group select {
             width: 100%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            font-size: 14px;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+            font-size: 16px;
+            background-color: #fafafa;
+            transition: border-color 0.3s ease-in-out;
         }
 
+        .form-group input:focus,
+        .form-group select:focus {
+            border-color: #3498db;
+            outline: none;
+        }
+
+        /* Tombol */
         button {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #4CAF50;
-            color: var(--bg-2-color);
-            font-size: 16px;
-            font-weight: bold;
+            padding: 12px 25px;
+            background-color: #2980b9;
+            color: white;
+            font-size: 18px;
+            font-weight: 600;
             border: none;
-            border-radius: 5px;
+            border-radius: 8px;
             cursor: pointer;
             transition: background-color 0.3s;
         }
 
         button:hover {
-            background-color: #45a049;
+            background-color: #3498db;
+        }
+
+        /* Responsif */
+        @media (max-width: 768px) {
+            .form-container {
+                padding: 20px;
+                max-width: 100%;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            .form-group input,
+            .form-group select {
+                font-size: 14px;
+                padding: 10px;
+            }
         }
     </style>
 </head>
 
 <body>
 
-    <div class="container">
+    <div class="form-container">
         <h1>Edit Program Keahlian</h1>
         <form action="{{ route('program.update', $programKeahlian->id_program_keahlian) }}" method="POST">
             @csrf
@@ -101,17 +134,16 @@
                 <label for="id_bidang_keahlian">Bidang Keahlian</label>
                 <select name="id_bidang_keahlian" id="id_bidang_keahlian">
                     @foreach ($bidangKeahlian as $bidang)
-                        <option value="{{ $bidang->id_bidang_keahlian }}"
-                            {{ $bidang->id_bidang_keahlian == $programKeahlian->id_bidang_keahlian ? 'selected' : '' }}>
+                        <option value="{{ $bidang->id_bidang_keahlian }}"{{
+                            $bidang->id_bidang_keahlian == $programKeahlian->id_bidang_keahlian ? 'selected' : '' }}>
                             {{ $bidang->bidang_keahlian }}
                         </option>
                     @endforeach
                 </select>
             </div>
-            <button type="submit">Simpan</button>
+            <button type="submit">Simpan Perubahan</button>
         </form>
     </div>
-
 
 </body>
 

@@ -1,95 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pengaturan Privasi Alumni</title>
-
-
+    <title>Edit Konsentrasi Keahlian</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
-        body {
-
-            height: 800px;
-            display: flex;
-            flex-direction: column;
+        /* Reset default styles */
+        * {
             margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-        :root {
-            --text-color: #000000;
-            --bg-input-color: #4782B2;
-            --bg-input-2-color: #70BFFF;
-            --bg-1-color: #1A2189;
-            --bg-2-color: #FFFFFF;
-        }
-
+        /* Main body styling */
         body {
-            height: 800px;
+            font-family: 'Arial', sans-serif;
+            background-color: #ecf0f1;
+            color: #333;
             display: flex;
-            flex-direction: column;
-            margin: 0;
-        }
-
-        h1 {
-            text-align: center;
-            font-size: 32px;
-            font-weight: bold;
-            color: var(--bg-1-color);
-            margin-top: 20px;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
-        }
-
-        .form {
-            max-width: 600px;
-            margin: 20px auto;
-            background-color: #f9f9f9;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
             padding: 20px;
+        }
+
+        /* Container for the form */
+        .form {
+            background-color: #fff;
+            width: 100%;
+            max-width: 600px;
+            padding: 30px;
             border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        /* Form header */
+        h1 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #2c3e50;
+            font-weight: bold;
+        }
+
+        /* Form group (label and input field) */
+        .form div {
+            margin-bottom: 20px;
+            text-align: left;
         }
 
         .form label {
             display: block;
-            margin-bottom: 8px;
+            font-size: 16px;
             font-weight: bold;
-            color: #333;
+            color: #34495e;
+            margin-bottom: 8px;
         }
 
         .form input {
             width: 100%;
-            padding: 10px;
-            margin-bottom: 15px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            font-size: 14px;
-        }
-
-        .form button {
-            display: block;
-            width: 100%;
-            padding: 10px;
-            background-color: #4CAF50;
-            color: var(--bg-2-color);
+            padding: 12px;
             font-size: 16px;
-            font-weight: bold;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            margin-top: 5px;
         }
 
-        .form button:hover {
-            background-color: #45a049;
+        /* Styling for the submit button */
+        button {
+            background-color: #1abc9c;
+            color: white;
+            padding: 14px 28px;
+            font-size: 18px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background-color: #16a085;
+        }
+
+        /* Responsiveness */
+        @media (max-width: 600px) {
+            .form {
+                padding: 20px;
+                width: 100%;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            button {
+                width: 100%;
+            }
         }
     </style>
 </head>
-
 <body>
 
-
-   
     <div class="form">
         <h1>Edit Konsentrasi Keahlian</h1>
         <form action="{{ route('konsentrasi.update', $konsentrasiKeahlian->id_konsentrasi_keahlian) }}" method="POST">
@@ -113,8 +126,8 @@
             <button type="submit" class="btn btn-primary">Update</button>
         </form>
     </div>
+
     <script src="{{ asset('js/admin.js') }}"></script>
 
 </body>
-
 </html>

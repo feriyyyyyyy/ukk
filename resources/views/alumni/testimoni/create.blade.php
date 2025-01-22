@@ -1,180 +1,149 @@
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-
-    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
-
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tambah Data Alumni</title>
 
+    <!-- Select2 CSS and JS -->
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
     <style>
-        /* CSS untuk Select2 */
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        body {
+            background-color: #f0f4f8;
+            color: #333;
+            font-size: 16px;
+        }
+
+        h1, h2 {
+            text-align: center;
+            color: #2A3E6E;
+        }
+
+        /* Form Container */
+        .container {
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Styling for labels and input fields */
+        label {
+            font-weight: bold;
+            color: #555;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+            transition: border 0.3s ease;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            border-color: #4782B2;
+            outline: none;
+        }
+
+        /* Select2 Dropdown Styles */
         .select2-container .select2-selection--single {
-            height: 38px;
-            /* Tinggi elemen dropdown agar seimbang dengan input lainnya */
+            height: 40px;
             padding: 6px 12px;
             font-size: 14px;
             border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box;
+            border-radius: 5px;
         }
 
         .select2-container .select2-selection--single .select2-selection__rendered {
             line-height: 24px;
-            /* Agar teks tidak terpotong */
-        }
-
-        .select2-container .select2-selection--single .select2-selection__arrow {
-            height: 36px;
-            right: 10px;
         }
 
         .select2-dropdown {
-            border-radius: 4px;
+            border-radius: 5px;
             box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-            /* Efek bayangan untuk dropdown */
         }
 
         .select2-results__option {
             padding: 8px 12px;
-            font-size: 14px;
         }
 
         .select2-results__option--highlighted {
             background-color: #4782B2;
-            /* Warna saat hover */
-            color: #fff;
+            color: white;
         }
 
-        :root {
-            --text-color: #000000;
-            --bg-input-color: #4782B2;
-            --bg-input-2-color: #70BFFF;
-            --bg-1-color: #1A2189;
-            --bg-2-color: #FFFFFF;
-            --alert-btn-color: #DC060F;
-        }
-
-        /* General Styling */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f0f8ff;
-            color: var(--text-color);
-        }
-
-        h1 {
-            text-align: center;
-            /* font-size: 28px; */
-            margin-top: 20px;
-            color: var(--bg-1-color);
-        }
-
-        /* Styling untuk form */
-        form {
-            max-width: 600px;
-            margin: 20px auto;
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        form label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: bold;
-            color: #333;
-        }
-
-        form input,
-        form select,
-        form textarea {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 15px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            box-sizing: border-box;
-            font-size: 14px;
-            background-color: #f9f9f9;
-            color: #333;
-            transition: border-color 0.3s ease;
-        }
-
-        form input:focus,
-        form select:focus,
-        form textarea:focus {
-            border-color: var(--bg-input-color);
-            outline: none;
-        }
-
-        form button {
+        /* Submit Button */
+        button {
             display: block;
             width: 100%;
-            padding: 10px;
-            background-color: var(--bg-input-color);
-            color: var(--bg-2-color);
+            padding: 12px;
+            background-color: #4782B2;
+            color: white;
             font-size: 16px;
             font-weight: bold;
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            transition: background-color 0.3s;
+            transition: background-color 0.3s ease;
         }
 
-        form button:hover {
-            background-color: var(--bg-1-color);
+        button:hover {
+            background-color: #375a7f;
         }
 
         /* Success Message */
         .success {
-            max-width: 600px;
-            margin: 20px auto;
-            padding: 10px 20px;
             background-color: #d4edda;
             color: #155724;
             border: 1px solid #c3e6cb;
             border-radius: 5px;
+            padding: 15px;
+            margin-top: 20px;
+            text-align: center;
         }
 
         /* Responsive Design */
         @media (max-width: 768px) {
-            form {
+            .container {
                 padding: 15px;
             }
 
-            form input,
-            form select,
-            form textarea {
-                padding: 8px;
+            input, select, textarea {
+                padding: 10px;
             }
 
-            form button {
+            button {
                 font-size: 14px;
             }
-
-            h1 {
-                font-size: 24px;
-            }
         }
 
-        .form-group-active {
-            margin-bottom: 25px;
-        }
     </style>
 </head>
 
 <body>
-    <div class="container mt-5">
-        <h2>Create Testimoni</h2>
+
+    <div class="container">
+        <h2>Tambah Testimoni Alumni</h2>
         <form action="{{ route('testimoni.store') }}" method="POST">
             @csrf
+            <!-- Alumni Dropdown -->
             <div class="mb-3">
                 <label for="id_alumni" class="form-label">Alumni</label>
                 <select class="form-select" id="id_alumni" name="id_alumni" required>
@@ -184,42 +153,47 @@
                     @endforeach
                 </select>
             </div>
+
+            <!-- Display Selected Alumni Name -->
             <div class="form-group">
                 <label for="selected_alumni_name">Nama Alumni Terpilih:</label>
                 <input type="text" id="selected_alumni_name" class="form-control" readonly>
             </div>
 
+            <!-- Testimonial Input -->
             <div class="mb-3">
                 <label for="testimoni" class="form-label">Testimoni</label>
                 <textarea class="form-control" id="testimoni" name="testimoni" rows="4" required>{{ old('testimoni') }}</textarea>
             </div>
+
+            <!-- Testimonial Date -->
             <div class="mb-3">
                 <label for="tgl_testimoni" class="form-label">Tanggal Testimoni</label>
                 <input type="date" class="form-control" id="tgl_testimoni" name="tgl_testimoni" value="{{ old('tgl_testimoni') }}" required>
             </div>
+
+            <!-- Submit Button -->
             <button type="submit" class="btn btn-primary">Simpan</button>
         </form>
     </div>
+
+    <script>
+        $(document).ready(function() {
+            // Initialize Select2
+            $('#id_alumni').select2({
+                placeholder: "Cari dan pilih nama alumni...",
+                allowClear: true,
+                width: '100%'
+            });
+
+            // Event handler for alumni selection change
+            $('#id_alumni').on('change', function() {
+                const selectedText = $(this).find('option:selected').text();
+                $('#selected_alumni_name').val(selectedText);
+            });
+        });
+    </script>
+
 </body>
-<script>
-    $(document).ready(function() {
-        // Inisialisasi Select2
-        $('#id_alumni').select2({
-            placeholder: "Cari dan pilih nama alumni...",
-            allowClear: true,
-            width: '100%' // Pastikan dropdown Select2 menyesuaikan lebar input
-        });
-
-        // Tangkap event change
-        $('#id_alumni').on('change', function() {
-            // Ambil teks dari opsi yang dipilih
-            const selectedText = $(this).find('option:selected').text();
-
-            // Update input dengan nama alumni yang dipilih
-            $('#selected_alumni_name').val(selectedText);
-        });
-    });
-</script>
-
 
 </html>

@@ -1,58 +1,125 @@
-/* Body content styles */
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f0f4f8; /* Latar belakang soft */
+/* General Reset */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
-.container {
-    padding: 20px;
-    margin-top: 30px;
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f7f6;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
 }
 
-h1 {
-    color: #2c3e50; /* Teks judul gelap */
-    font-size: 32px;
+/* Navbar Styles */
+nav {
+    background-color: #1A2189;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    color: #fff;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+}
+
+.profile .logo img {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.profile .username {
+    font-size: 18px;
     font-weight: bold;
-    margin-bottom: 30px;
 }
 
-.table {
+.menu {
+    display: flex;
+    gap: 20px;
+}
+
+.menu .menu-item button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.menu .menu-item button:hover {
+    color: #70a1ff;
+}
+
+/* Container Styling */
+.container {
+    margin-top: 70px;
+    padding: 20px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 70px auto 0;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Table Styling */
+table {
     width: 100%;
     border-collapse: collapse;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-.table th,
-.table td {
-    padding: 14px;
+thead {
+    background-color: #1A2189;
+    color: #fff;
+}
+
+thead th {
+    padding: 12px;
     text-align: left;
-    border: 1px solid #dcdfe6;
-    font-size: 15px;
 }
 
-.table th {
-    background-color: #5420ce; /* Header biru terang */
-    color: white;
-    font-weight: bold;
+tbody td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
 }
 
-.table td {
-    background-color: #ffffff;
-    color: #333;
+tbody tr:hover {
+    background-color: #f1f1f1;
 }
 
-.table tr:nth-child(even) {
-    background-color: #f9f9f9;
-}
+/* Media Queries */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 
-.table tr:hover {
-    background-color: #f1f8ff; /* Highlight saat hover */
-}
+    .menu {
+        display: none;
+    }
 
-.text-center {
-    text-align: center;
-    color: #7f8c8d;
-    font-size: 16px;
+    .profile {
+        flex-direction: column;
+    }
+
+    .container {
+        margin-top: 90px;
+        padding: 10px;
+    }
+
+    .table {
+        font-size: 14px;
+    }
 }

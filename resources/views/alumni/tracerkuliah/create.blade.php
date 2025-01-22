@@ -1,145 +1,156 @@
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tambah Data Tracer Kuliah</title>
+
+    <!-- Select2 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tambah Data Kuliah</title>
-
     <style>
         :root {
-            --text-color: #000000;
-            --bg-input-color: #4782B2;
-            --bg-input-2-color: #70BFFF;
-            --bg-1-color: #1A2189;
-            --bg-2-color: #FFFFFF;
-            --alert-btn-color: #DC060F;
+            --primary-color: #1A2189;
+            --secondary-color: #4782B2;
+            --highlight-color: #70BFFF;
+            --background-color: #f4f9ff;
+            --text-color: #333;
+            --btn-color: #4782B2;
+            --btn-hover-color: #1A2189;
+            --border-color: #ccc;
         }
 
         /* General Styling */
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
+            background-color: var(--background-color);
             margin: 0;
             padding: 0;
-            background-color: #f0f8ff;
             color: var(--text-color);
         }
 
         h1 {
             text-align: center;
-            /* font-size: 28px; */
-            margin-top: 20px;
-            color: var(--bg-1-color);
+            color: var(--primary-color);
+            margin-top: 40px;
+            font-size: 28px;
         }
 
-        /* Styling untuk form */
-        form {
-            max-width: 600px;
-            margin: 20px auto;
-            background-color: #fff;
-            padding: 20px;
+        .container {
+            max-width: 700px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 30px;
             border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin-top: 30px;
+        }
+
+        .alert-success {
+            padding: 15px;
+            background-color: #d4edda;
+            border-color: #c3e6cb;
+            border-radius: 5px;
+            color: #155724;
+            margin-bottom: 20px;
         }
 
         form label {
-            display: block;
-            margin-bottom: 8px;
             font-weight: bold;
-            color: #333;
+            margin-bottom: 8px;
+            display: block;
+            color: var(--primary-color);
         }
 
         form input,
         form select,
         form textarea {
             width: 100%;
-            padding: 10px;
+            padding: 12px;
             margin-bottom: 15px;
-            border: 1px solid #ccc;
+            border: 1px solid var(--border-color);
             border-radius: 5px;
-            box-sizing: border-box;
-            font-size: 14px;
+            font-size: 16px;
             background-color: #f9f9f9;
-            color: #333;
-            transition: border-color 0.3s ease;
+            color: var(--text-color);
+            transition: all 0.3s ease;
         }
 
         form input:focus,
         form select:focus,
         form textarea:focus {
-            border-color: var(--bg-input-color);
+            border-color: var(--highlight-color);
             outline: none;
         }
 
+        .form-group-active {
+            margin-bottom: 20px;
+        }
+
         form button {
-            display: block;
             width: 100%;
-            padding: 10px;
-            background-color: var(--bg-input-color);
-            color: var(--bg-2-color);
+            padding: 12px;
+            background-color: var(--btn-color);
+            color: white;
             font-size: 16px;
-            font-weight: bold;
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            transition: background-color 0.3s;
+            transition: background-color 0.3s ease;
         }
 
         form button:hover {
-            background-color: var(--bg-1-color);
+            background-color: var(--btn-hover-color);
         }
 
-        /* Success Message */
-        .success {
-            max-width: 600px;
-            margin: 20px auto;
-            padding: 10px 20px;
-            background-color: #d4edda;
-            color: #155724;
-            border: 1px solid #c3e6cb;
+        .select2-container .select2-selection--single {
+            height: 45px;
             border-radius: 5px;
+            padding: 5px 10px;
+        }
+
+        .select2-container--default .select2-selection--single .select2-selection__rendered {
+            font-size: 16px;
+            color: var(--text-color);
         }
 
         /* Responsive Design */
         @media (max-width: 768px) {
-            form {
-                padding: 15px;
+            h1 {
+                font-size: 24px;
+            }
+
+            .container {
+                padding: 20px;
             }
 
             form input,
             form select,
             form textarea {
-                padding: 8px;
+                font-size: 14px;
             }
 
             form button {
                 font-size: 14px;
             }
-
-            h1 {
-                font-size: 24px;
-            }
-        }
-        .form-group-active {
-            margin-bottom: 25px;
         }
     </style>
 </head>
 
 <body>
     <div class="container">
-        <h1 class="mt-4">Tambah Data Tracer Kuliah</h1>
+        <h1>Tambah Data Tracer Kuliah</h1>
 
+        <!-- Success Message -->
         @if (session('success'))
             <div class="alert alert-success">{{ session('success') }}</div>
         @endif
 
         <form action="{{ route('tracerkuliah.store') }}" method="POST">
             @csrf
-
 
             <div class="form-group-active">
                 <label for="id_alumni">Nama Alumni:</label>
@@ -150,12 +161,11 @@
                     @endforeach
                 </select>
             </div>
+
             <div class="form-group">
                 <label for="selected_alumni_name">Nama Alumni Terpilih:</label>
                 <input type="text" id="selected_alumni_name" class="form-control" readonly>
             </div>
-
-
 
             <div class="form-group">
                 <label for="tracer_kuliah_kampus">Nama Kampus:</label>
@@ -190,25 +200,23 @@
             <button type="submit" class="btn btn-primary">Simpan</button>
         </form>
     </div>
+
+    <script>
+        $(document).ready(function () {
+            // Initialize Select2
+            $('#id_alumni').select2({
+                placeholder: "Cari dan pilih nama alumni...",
+                allowClear: true,
+                width: '100%'
+            });
+
+            // Capture change event on alumni select
+            $('#id_alumni').on('change', function () {
+                const selectedText = $(this).find('option:selected').text();
+                $('#selected_alumni_name').val(selectedText);
+            });
+        });
+    </script>
 </body>
-<script>
-    $(document).ready(function() {
-        // Inisialisasi Select2
-        $('#id_alumni').select2({
-            placeholder: "Cari dan pilih nama alumni...",
-            allowClear: true,
-            width: '100%' // Pastikan dropdown Select2 menyesuaikan lebar input
-        });
-
-        // Tangkap event change
-        $('#id_alumni').on('change', function() {
-            // Ambil teks dari opsi yang dipilih
-            const selectedText = $(this).find('option:selected').text();
-
-            // Update input dengan nama alumni yang dipilih
-            $('#selected_alumni_name').val(selectedText);
-        });
-    });
-</script>
 
 </html>

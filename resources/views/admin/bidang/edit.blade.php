@@ -4,91 +4,119 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pengaturan Privasi Alumni</title>
-    <link rel="stylesheet" href="{{ asset('css/bidang.css') }}">
+    <title>Edit Bidang Keahlian</title>
     <link rel="stylesheet" href="{{ asset('css/nav_admin.css') }}">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
-        body {
-
-            height: 800px;
-            display: flex;
-            flex-direction: column;
-             margin: 0;
-        }
-
+        /* Global Styling */
         :root {
-            --text-color: #000000;
-            --bg-input-color: #4782B2;
-            --bg-input-2-color: #70BFFF;
-            --bg-1-color: #1A2189;
-            --bg-2-color: #FFFFFF;
+            --primary-color: #3498db;
+            --secondary-color: #70a1ff;
+            --bg-color: #f0f4f8;
+            --text-color: #333;
+            --border-color: #ddd;
+            --btn-bg-color: #4CAF50;
+            --btn-bg-hover-color: #45a049;
+            --btn-text-color: #fff;
+            --input-bg-color: #ffffff;
+            --input-focus-color: #3498db;
+            --shadow-color: rgba(0, 0, 0, 0.1);
         }
 
         body {
-            height: 800px;
-            display: flex;
-            flex-direction: column;
+            background-color: var(--bg-color);
             margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
         }
 
         h1 {
             text-align: center;
-            font-size: 32px;
+            font-size: 30px;
             font-weight: bold;
-            color: var(--bg-1-color);
-            margin-top: 20px;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .form {
+            background-color: var(--input-bg-color);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px var(--shadow-color);
+            width: 100%;
             max-width: 600px;
-            margin: 20px auto;
-            background-color: #f9f9f9;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
         .form label {
+            font-size: 16px;
+            font-weight: bold;
+            color: var(--text-color);
             display: block;
             margin-bottom: 8px;
-            font-weight: bold;
-            color: #333;
         }
 
         .form input {
             width: 100%;
-            padding: 10px;
-            margin-bottom: 15px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
             font-size: 14px;
+            background-color: var(--input-bg-color);
+            transition: border-color 0.3s ease;
+        }
+
+        .form input:focus {
+            border-color: var(--input-focus-color);
+            outline: none;
         }
 
         .form button {
-            display: block;
             width: 100%;
-            padding: 10px;
-            background-color: #4CAF50;
-            color: var(--bg-2-color);
+            padding: 12px;
+            background-color: var(--btn-bg-color);
+            color: var(--btn-text-color);
             font-size: 16px;
             font-weight: bold;
             border: none;
-            border-radius: 5px;
+            border-radius: 8px;
             cursor: pointer;
-            transition: background-color 0.3s;
+            transition: background-color 0.3s ease;
         }
 
         .form button:hover {
-            background-color: #45a049;
+            background-color: var(--btn-bg-hover-color);
+        }
+
+        /* Responsivitas */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 26px;
+            }
+
+            .form {
+                padding: 20px;
+            }
+
+            .form input {
+                padding: 10px;
+            }
+
+            .form button {
+                font-size: 14px;
+                padding: 10px;
+            }
         }
     </style>
 </head>
 
 <body>
-
-
 
     <div class="form">
         <h1>Edit Bidang Keahlian</h1>
@@ -97,15 +125,13 @@
             @method('PUT')
             <div>
                 <label for="kode_bidang_keahlian">Kode Bidang Keahlian</label>
-                <input type="text" id="kode_bidang_keahlian" name="kode_bidang_keahlian"
-                    value="{{ $bidangKeahlian->kode_bidang_keahlian }}" required>
+                <input type="text" id="kode_bidang_keahlian" name="kode_bidang_keahlian" value="{{ $bidangKeahlian->kode_bidang_keahlian }}" required>
             </div>
             <div>
                 <label for="bidang_keahlian">Nama Bidang Keahlian</label>
-                <input type="text" id="bidang_keahlian" name="bidang_keahlian"
-                    value="{{ $bidangKeahlian->bidang_keahlian }}" required>
+                <input type="text" id="bidang_keahlian" name="bidang_keahlian" value="{{ $bidangKeahlian->bidang_keahlian }}" required>
             </div>
-            <button type="submit" class="btn btn-primary">Update</button>
+            <button type="submit">Update</button>
         </form>
     </div>
 

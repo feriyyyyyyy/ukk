@@ -3,19 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pengaturan Privasi Alumni</title>
+    <title>Pengaturan Bidang Keahlian Alumni</title>
     <link rel="stylesheet" href="{{ asset('css/bidang.css') }}">
     <link rel="stylesheet" href="{{ asset('css/nav_admin.css') }}">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <style>
-        body {
-        
-             height: 800px;
-            display: flex;
-            flex-direction: column;
-            margin: 0;
-        }
-    </style>
 </head>
 <body>
 
@@ -39,7 +30,8 @@
                 <button onclick="window.location='{{ route('admin.TracerKuliah.index') }}';">Tracer Kuliah</button>
             </div>
             <div class="menu-item">
-                <button onclick="window.location='{{ route('admin.TracerKerja.index') }}';">Tracer Kerja</button>            </div>
+                <button onclick="window.location='{{ route('admin.TracerKerja.index') }}';">Tracer Kerja</button>            
+            </div>
         </div>
         <div class="menu_dropdown">
             <button class="burger-icon" id="burgerMenu">
@@ -58,7 +50,7 @@
             </ul>
         </div>
     </nav>
-    
+
     <div class="container">
         <h1>Daftar Bidang Keahlian</h1>
         <div class="tmbh">
@@ -94,18 +86,6 @@
     </div>
 
     <script src="{{ asset('js/admin.js') }}"></script>
-    <footer class="footer">
-        <div class="footer-content">
-            <p>Copyright © 2024-2027 Andika. Hak Cipta. All rights reserved.</p>
-            <div class="social-icons">
-                <a href="#" class="social-icon-1">
-                    <img src="{{ asset('images/tk.png') }}" alt="Logo">
-                </a>
-                <a href="#" class="social-icon">
-                    <img src="{{ asset('images/ig.jfif') }}" alt="Logo">
-                </a>
-            </div>
-        </div>
-    </footer>
+   
 </body>
 </html>

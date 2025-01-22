@@ -8,33 +8,47 @@
     <link rel="stylesheet" href="{{ asset('css/nav_admin.css') }}">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
-        body {
+        /* Global Styles */
+        :root {
+            --primary-color: #4E73DF;
+            --secondary-color: #F1F1F1;
+            --btn-color: #2D6BB6;
+            --hover-color: #1F4E91;
+            --text-color: #333;
+            --border-color: #ddd;
+            --input-focus-color: #4E73DF;
+        }
 
-            height: 800px;
-            display: flex;
-            flex-direction: column;
+        body {
+            background-color: #F9FBFC;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
         }
 
         /* Styling untuk Form */
         .form {
-            max-width: 600px;
-            margin: 20px auto;
-            background-color: var(--bg-2-color);
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            font-family: Arial, sans-serif;
+            max-width: 550px;
+            width: 100%;
+            background-color: #ffffff;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
         }
 
-        /* Styling untuk Judul */
+        /* Styling untuk Judul Form */
         .form h1 {
-            text-align: center;
-            font-size: 28px;
-            font-weight: bold;
-            color: var(--bg--bg-1-color);
-            margin-bottom: 20px;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+            font-size: 30px;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         /* Styling untuk Label */
@@ -42,6 +56,7 @@
             font-size: 16px;
             font-weight: bold;
             color: var(--text-color);
+            text-align: left;
             display: block;
             margin-bottom: 8px;
         }
@@ -49,61 +64,65 @@
         /* Styling untuk Input */
         .form input {
             width: 100%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
             font-size: 14px;
-            margin-bottom: 15px;
-            box-sizing: border-box;
-            transition: border-color 0.3s ease;
+            color: var(--text-color);
+            transition: border-color 0.3s ease-in-out;
         }
 
         /* Fokus pada Input */
         .form input:focus {
-            border-color: var(--bg--bg-1-color);
+            border-color: var(--input-focus-color);
             outline: none;
         }
 
         /* Styling untuk Tombol */
         .form button {
-            display: block;
             width: 100%;
-            padding: 10px;
-            background-color: var(--bg-input-color);
-            color: var(--bg-2-color);
+            padding: 12px;
+            background-color: var(--btn-color);
+            color: white;
+            border: none;
+            border-radius: 6px;
             font-size: 16px;
             font-weight: bold;
-            border: none;
-            border-radius: 5px;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: background-color 0.3s ease, transform 0.3s ease;
         }
 
+        /* Hover effect untuk Tombol */
         .form button:hover {
-            background-color: var(--alert-btn-color);
+            background-color: var(--hover-color);
             transform: scale(1.05);
         }
 
         /* Responsivitas */
         @media (max-width: 768px) {
             .form {
-                padding: 15px;
+                padding: 20px;
             }
 
             .form h1 {
-                font-size: 24px;
+                font-size: 26px;
+            }
+
+            .form input {
+                padding: 10px;
+                font-size: 13px;
             }
 
             .form button {
                 font-size: 14px;
+                padding: 10px;
             }
         }
     </style>
 </head>
 
 <body>
-
-
 
     <div class="form">
         <h1>Tambah Bidang Keahlian</h1>
