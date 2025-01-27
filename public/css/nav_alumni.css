@@ -1,135 +1,159 @@
-/* Navbar styles */
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* General Layout */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f7fb;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Navigation */
 nav {
+    background-color: #2c3e50;
+    color: white;
     display: flex;
     justify-content: space-between;
+    padding: 20px;
     align-items: center;
-    background-color: #1e2a47; /* Warna biru gelap */
-    padding: 20px 30px;
-    border-bottom: 4px solid #00aaff; /* Garis bawah biru terang */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-.profile {
+nav .profile {
     display: flex;
     align-items: center;
 }
 
-.profile .logo img {
-    height: 35px;
-    width: auto;
+nav .profile .logo img {
+    width: 40px;
+    margin-right: 10px;
 }
 
-.profile .Username {
-    color: #ffffff;
-    margin-left: 12px;
+nav .menu {
+    display: flex;
+}
+
+nav .menu button {
+    background-color: #34495e;
+    color: white;
+    padding: 10px 15px;
+    margin: 0 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+nav .menu button:hover {
+    background-color: #1abc9c;
+}
+
+/* Dropdown Menu */
+.menu-dropdown .dropdown {
+    display: none;
+}
+
+.menu-dropdown:hover .dropdown {
+    display: block;
+}
+
+.menu-dropdown .dropdown button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+/* Top Content */
+.top-content {
+    padding: 40px 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.top-content .info {
+    max-width: 50%;
+}
+
+.top-content .info h2 {
+    font-size: 28px;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.top-content .info h3 {
     font-size: 18px;
+    color: #7f8c8d;
+}
+
+.top-content .info h3 span {
     font-weight: bold;
 }
 
-.menu {
-    display: flex;
-    gap: 20px;
-}
-
-.menu-item button {
-    background-color: #5027c4; /* Tombol biru terang */
-    color: white;
-    padding: 12px 18px;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
+/* Profile Section */
+.info-profile .table-profile {
+    background-color: white;
     border-radius: 8px;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 300px;
 }
 
-.menu-item button:hover {
-    background-color: #5d35bb; /* Biru lebih gelap saat hover */
-    transform: translateY(-3px); /* Efek tombol terangkat */
+.table-profile img {
+    width: 100px;
+    border-radius: 50%;
+    margin-bottom: 20px;
 }
 
-.menu_dropdown {
-    display: none;
+.profile-item {
+    margin-bottom: 10px;
 }
 
-.burger-icon {
-    background: none;
-    border: none;
-    cursor: pointer;
+.profile-item p {
+    font-size: 16px;
+    color: #34495e;
 }
 
-.burger-icon img {
-    width: 25px;
-    height: auto;
-}
-
-.dropdown {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-}
-
-.dropdown .dropdown-icon {
-    background: none;
-    border: none;
-    padding: 8px;
-    cursor: pointer;
-}
-
-.dropdown .dropdown-icon img {
-    width: 20px;
-    height: auto;
-}
-/* Navigation Styles */
-nav {
+/* Chart Section */
+.charts-section {
     display: flex;
     justify-content: space-between;
-    background-color: #1A2189;
+    padding: 40px 20px;
+}
+
+.chart-card {
+    background-color: white;
+    border-radius: 8px;
     padding: 20px;
+    width: 48%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.logo-container {
-    display: flex;
-    align-items: center;
+.chart-card h4 {
+    font-size: 20px;
+    color: #34495e;
+    margin-bottom: 10px;
 }
 
-.logo {
-    width: 50px;
-    height: 50px;
-    margin-right: 20px;
+.chart-card p {
+    font-size: 14px;
+    color: #7f8c8d;
 }
 
-.username {
-    font-size: 18px;
-    color: #fff;
+/* Footer */
+.footer {
+    background-color: #2c3e50;
+    color: white;
+    padding: 20px;
+    text-align: center;
 }
 
-.menu {
-    display: flex;
-}
-
-.menu-item button {
-    background-color: #4782B2;
-    color: #fff;
-    padding: 10px 20px;
+.footer .social-icons a {
     margin: 0 10px;
-    border: none;
-    cursor: pointer;
 }
 
-.menu-item button:hover {
-    background-color: #70BFFF;
-}
-
-.menu_dropdown .burger-icon {
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-}
-
-.dropdown {
-    display: none;
-}
-
-.dropdown.active {
-    display: block;
+.footer .social-icons img {
+    width: 25px;
 }

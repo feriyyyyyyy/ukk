@@ -10,7 +10,7 @@
             margin: 0;
             padding: 0;
             font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #1e90ff, #00bfff);
+            background-image: url(/images/logo.png);
             height: 100vh;
             display: flex;
             justify-content: center;
