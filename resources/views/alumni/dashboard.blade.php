@@ -55,10 +55,33 @@
         <div class="info-profile">
             <div class="table-profile">
                 <img src="{{ asset('images/profil.png') }}" alt="Profil" class="profile-img">
-                <div class="profile-item">Nama : {{ Auth::user()->name }}</div>
-                <div class="profile-item">Email : {{ Auth::user()->email }}</div>
-                <div class="profile-item">Jurusan : {{ Auth::user()->jurusan }}</div>
-                <div class="profile-item">Tahun Lulus : {{ Auth::user()->tahun_lulus }}</div>
+                <div class="profil-item">
+                    @if ($alumnis)
+                        <p>Nama : {{ $alumnis->nama_depan }} {{ $alumnis->nama_belakang ?? '' }}</p>
+                    @else
+                        <p>Data alumni tidak ditemukan.</p>
+                    @endif
+                </div>
+                <div class="profil-item">
+                    <p>Email : {{ Auth::user()->email }}</p>
+                </div>
+                <div class="profil-item">
+
+                    @if ($alumnis)
+                        <p>Jurusan : {{ $alumnis->konsentrasiKeahlian->konsentrasi_keahlian }}</p>
+                    @else
+                        <p>Jurusan tidak ditemukan.</p>
+                    @endif
+
+                </div>
+                <div class="profil-item">
+                    @if ($alumnis)
+                        <p>Tahun Lulus : {{ $alumnis->tahunLulus->tahun_lulus }} </p>
+                    @else
+                        <p>Tahun Lulus tidak ditemukan.</p>
+                    @endif
+                </div>
+            </div>
             </div>
         </div>
     </div>

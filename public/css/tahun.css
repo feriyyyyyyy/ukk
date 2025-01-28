@@ -1,103 +1,159 @@
+/* Warna dan Variabel */
 :root {
-    --text-color: #000000;
-    --bg-input-color: #4782B2;
-    --bg--bg-1-color: #1A2189;
-    --bg-2-color: #FFFFFF;
+    --primary-color: #4CAF50;
+    --secondary-color: #35414b;
+    --background-color: #F9F9F9;
+    --text-color: #333;
+    --hover-color: #3e8e41;
+    --nav-bg-color: #25262e;
+    --white: #ffffff;
+    --table-border-color: #ccc;
 }
 
-/* General styling for the table */
-table {
-    width: 95%;
-    margin: 20px auto;
-    border-collapse: collapse;
-    font-family: Arial, sans-serif;
-    background-color: #f9f9f9;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    border-radius: 8px;
-    overflow: hidden;
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
 }
 
-table thead tr {
-    background-color: var(--bg--bg-1-color);
-    color: white;
-    text-align: left;
-    font-weight: bold;
+/* Navigation Bar */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--nav-bg-color);
+    padding: 10px 20px;
+    color: var(--white);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
-table th,
-table td {
-    padding: 12px 15px;
-    border-bottom: 1px solid #ddd;
+nav .profile {
+    display: flex;
+    align-items: center;
 }
 
-table tbody tr:nth-child(even) {
-    background-color: #f2f2f2;
+nav .logo img {
+    height: 40px;
+    margin-right: 10px;
 }
 
-table tbody tr:hover {
-    background-color: #eafaf1;
-    cursor: pointer;
+nav .menu {
+    display: flex;
+    gap: 15px;
 }
 
-table tbody tr:last-child td {
-    border-bottom: none;
-}
-
-a,
-button {
-    text-decoration: none;
-    display: inline-block;
-    padding: 8px 12px;
+nav .menu-item button {
+    background: none;
+    border: none;
+    color: var(--white);
     font-size: 14px;
     font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+nav .menu-item button:hover {
+    color: var(--primary-color);
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 30px auto;
+    background: var(--white);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.container .tmbh a {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--white);
+    text-decoration: none;
+    padding: 10px 15px;
     border-radius: 5px;
-    transition: background-color 0.3s ease;
+    font-weight: bold;
+    transition: background-color 0.3s;
 }
 
-a:hover,
-button:hover {
-    opacity: 0.9;
+.container .tmbh a:hover {
+    background-color: var(--hover-color);
 }
 
-a[href*="edit"] {
-    background-color: #007BFF;
-    color: white;
-    border: none;
-}
-
-a[href*="edit"]:hover {
-    background-color: #0056b3;
-}
-
-form button {
-    background-color: #DC3545;
-    color: white;
-    border: none;
-}
-
-form button:hover {
-    background-color: #a71d2a;
-}
-.tmbh {
-    display: flex; /* Mengaktifkan Flexbox */
-    justify-content: flex-end; /* Mengatur tombol ke kanan */
-    margin-right: 20px; /* Menambahkan jarak dari sisi kanan */
+/* Table */
+.table {
+    width: 100%;
+    border-collapse: collapse;
     margin-top: 20px;
 }
 
-.tmbh a {
-    border: #000000 solid 2px;
-    border-radius: 15px;
-    background-color: var(--bg-input-color);
-    color: var(--bg-2-color);
-    text-align: center;
-    padding: 10px 20px; /* Menambahkan padding untuk ukuran tombol */
-    text-decoration: none; /* Menghilangkan garis bawah pada teks */
-    font-weight: bold; /* Membuat teks lebih tebal */
-    transition: background-color 0.3s ease; /* Menambahkan efek hover */
+.table th,
+.table td {
+    text-align: left;
+    padding: 12px;
+    border-bottom: 1px solid var(--table-border-color);
 }
 
-.tmbh a:hover {
-    background-color: var(--bg--bg-1-color); /* Warna tombol saat hover */
-    color: var(--bg-2-color); /* Warna teks saat hover */
+.table th {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+.table tr:hover {
+    background-color: #f2f2f2;
+}
+
+/* Button */
+.btn {
+    display: inline-block;
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+.btn-primary:hover {
+    background-color: var(--hover-color);
+}
+
+.btn-warning {
+    background-color: var(--secondary-color);
+    color: var(--white);
+}
+
+.btn-warning:hover {
+    background-color: #afc2cf;
+}
+
+/* Footer */
+.footer {
+    margin-top: 20px;
+    background: var(--nav-bg-color);
+    color: var(--white);
+    text-align: center;
+    padding: 20px 10px;
+}
+
+.footer .social-icons {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.footer .social-icons img {
+    height: 30px;
+    transition: transform 0.3s;
+}
+
+.footer .social-icons img:hover {
+    transform: scale(1.1);
 }

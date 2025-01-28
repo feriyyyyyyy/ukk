@@ -84,6 +84,8 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
             ->parameters([
                 'status-alumni' => 'status_alumni',
             ]);
+        Route::delete('destroy/{id}', [StatusAlumniController::class, 'destroy'])->name('status-alumni.destroy');
+
     });
 
     Route::prefix('admin/dataAlumni')->group(function () {

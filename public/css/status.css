@@ -1,109 +1,166 @@
+/* status.css */
 :root {
-    --text-color: #000000;
-    --bg-input-color: #4782B2;
-    --bg-input-2-color: #70BFFF;
-    --bg--bg-1-color: #1A2189;
-    --bg-2-color: #FFFFFF;
-    --alert-btn-color: #DC060F;
+    --primary-color: #4CAF50;
+    --secondary-color: #4782B2;
+    --warning-color: #FF9800;
+    --background-color: #F9F9F9;
+    --text-color: #333;
+    --hover-color: #45a049;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --button-radius: 6px;
 }
 
-/* Tabel styling */
-table {
-    width: 95%;
-    margin: 20px auto;
-    /* border-collapse: collapse; */
-    font-family: Arial, sans-serif;
-    background-color: #f9f9f9;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    border-radius: 8px;
-    overflow: hidden;
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
-table thead tr {
-    background-color: var(--bg-1-color);
+nav {
+    background-color: var(--primary-color);
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px var(--shadow-color);
+}
+
+nav .profile {
+    display: flex;
+    align-items: center;
+}
+
+nav .profile .logo img {
+    height: 40px;
+}
+
+nav .profile .username {
     color: white;
-    text-align: left;
-    font-weight: bold;
-    border-radius: 8px;
+    margin-left: 10px;
+    font-size: 18px;
 }
 
-table th,
-table td {
-    padding: 12px 15px;
-    border-bottom: 1px solid #ddd;
-    text-align: center;
+nav .menu {
+    display: flex;
 }
 
-table tbody tr:nth-child(even) {
-    background-color: #f2f2f2;
+nav .menu .menu-item {
+    background-color: transparent;
+    border: none;
+    color: white;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-right: 20px;
+    transition: background-color 0.3s;
 }
 
-table tbody tr:hover {
-    background-color: #eafaf1;
+nav .menu .menu-item:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+nav .dropdown {
+    position: relative;
+}
+
+nav .dropdown .burger-icon {
+    background: none;
+    border: none;
     cursor: pointer;
 }
 
-table tbody tr:last-child td {
-    border-bottom: none;
+nav .dropdown .dropdown-menu {
+    position: absolute;
+    top: 35px;
+    right: 0;
+    background-color: white;
+    border-radius: var(--button-radius);
+    box-shadow: 0 4px 10px var(--shadow-color);
+    display: none;
+    list-style: none;
+    padding: 10px;
 }
 
-a,
-button {
+nav .dropdown .dropdown-item {
+    background-color: transparent;
+    border: none;
+    padding: 10px;
+    font-size: 14px;
+    text-align: left;
+    color: var(--primary-color);
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s;
+}
+
+nav .dropdown .dropdown-item:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+nav .dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.container {
+    flex: 1;
+    padding: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: white;
+    box-shadow: 0 4px 15px var(--shadow-color);
+    border-radius: 10px;
+}
+
+.container .header {
+    margin-bottom: 20px;
+}
+
+.container .header .btn {
+    background-color: var(--primary-color);
+    padding: 12px 20px;
+    border-radius: var(--button-radius);
+    color: white;
+    font-weight: bold;
     text-decoration: none;
     display: inline-block;
-    padding: 8px 12px;
-    font-size: 14px;
-    font-weight: bold;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s;
 }
 
-a:hover,
-button:hover {
-    opacity: 0.9;
+.container .header .btn:hover {
+    background-color: #388E3C;
 }
 
-a[href*="edit"] {
-    background-color: #007BFF;
-    color: white;
-    border: none;
-}
-
-a[href*="edit"]:hover {
-    background-color: #0056b3;
-}
-
-form button {
-    background-color: #DC3545;
-    color: white;
-    border: none;
-}
-
-form button:hover {
-    background-color: #a71d2a;
-}
-
-.tmbh {
-    display: flex; /* Mengaktifkan Flexbox */
-    justify-content: flex-end; /* Mengatur tombol ke kanan */
-    margin-right: 20px; /* Menambahkan jarak dari sisi kanan */
-    margin-bottom: 10px;
+table {
+    width: 100%;
+    border-collapse: collapse;
     margin-top: 20px;
 }
 
-.tmbh a {
-    border: #000000 solid 2px;
-    border-radius: 15px;
-    background-color: var(--bg-input-color);
-    color: var(--bg-2-color);
-    text-align: center;
-    padding: 10px 20px; /* Menambahkan padding untuk ukuran tombol */
-    text-decoration: none; /* Menghilangkan garis bawah pada teks */
-    font-weight: bold; /* Membuat teks lebih tebal */
-    transition: background-color 0.3s ease; /* Menambahkan efek hover */
+table th, table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
 }
 
-.tmbh a:hover {
-    background-color: var(--bg-1-color); /* Warna tombol saat hover */
-    color: var(--bg-2-color); /* Warna teks saat hover */
+table th {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+table td a {
+    background-color: var(--warning-color);
+    padding: 8px 16px;
+    color: white;
+    border-radius: var(--button-radius);
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+table td a:hover {
+    background-color: #FB8C00;
 }

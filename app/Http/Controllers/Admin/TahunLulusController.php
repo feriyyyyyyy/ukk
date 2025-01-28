@@ -48,5 +48,20 @@ class TahunLulusController extends Controller
         $tahunLulus->update($request->all());
         return redirect()->route('tahun-lulus.index')->with('success', 'Tahun Lulus berhasil diperbarui.');
     }
-    
+    public function destroy($id)
+    {
+        // Mencari data berdasarkan id
+        $tahunLulus = TahunLulus::find($id);
+        
+        // Mengecek apakah data ditemukan
+        if ($tahunLulus) {
+            // Menghapus data
+            $tahunLulus->delete();
+            // Redirect dengan pesan sukses
+            return redirect()->route('tahun-lulus.index')->with('success', 'Data Tahun Lulus berhasil dihapus.');
+        } else {
+            // Jika data tidak ditemukan
+            return redirect()->route('tahun-lulus.index')->with('error', 'Data tidak ditemukan.');
+        }
+    }
 }

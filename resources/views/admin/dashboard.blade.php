@@ -68,24 +68,18 @@
                     <button class="btn btn-primary w-100" onclick="window.location='{{ route('konsentrasi.index') }}';">Kelola Konsentrasi Keahlian</button>
                 </div>
                 <div class="col-md-3">
+                    <button class="btn btn-primary w-100"  onclick="window.location='{{ route('status-alumni.index') }}';">Kelola Status Alumni</button>
+                </div>
+                <div class="col-md-3">
+                    <button  class="btn btn-primary w-100" onclick="window.location='{{ route('tahun-lulus.index') }}';">Kelola Tahun Lulus</button>
+                </div>
+                <div class="col-md-3">
                     <button class="btn btn-primary w-100" onclick="window.location='{{ route('bidang.index') }}';">Kelola Bidang Keahlian</button>
                 </div>
             </div>
         </section>
 
-        <section class="charts-section">
-    <div class="chart-card">
-        <h4>Data Alumni</h4>
-        <canvas id="chartAlumni"></canvas>
-        <p>Jumlah: 600</p>
-    </div>
-    <div class="chart-card">
-        <h4>Data Pekerjaan</h4>
-        <canvas id="chartPekerjaan"></canvas>
-        <p>Jumlah: 600</p>
-    </div>
-</section>
-
+   
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
     const configChart = (ctx, label, data, colors) => {

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Alumni;
+use Illuminate\Support\Facades\Auth;
 use App\Models\KonsentrasiKeahlian;
 use App\Models\StatusAlumni;
 use App\Models\TahunLulus;
@@ -14,8 +15,9 @@ class AlumniController extends Controller
      */
     public function index()
     {
-        $alumni = Alumni::with(['tahun_lulus', 'konsentrasi_keahlian']);
-        return view('alumni.dashboard', compact('alumni'));
+        
+        $alumnis = Alumni::with(['tahunLulus', 'konsentrasiKeahlian'])->where('email', Auth::user()->email)->first();
+                return view('alumni.dashboard', compact('alumnis'));
     }
 
     /**

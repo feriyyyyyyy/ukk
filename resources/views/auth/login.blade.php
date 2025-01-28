@@ -110,6 +110,19 @@
         .show-password input {
             margin-left: 5px;
         }
+        .register-container .extra-links {
+            margin-top: 10px;
+            font-size: 12px;
+        }
+
+        .register-container .extra-links a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+
+        .register-container .extra-links a:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 
@@ -131,6 +144,9 @@
             </div>
             <button type="submit">Login</button>
         </form>
+        <div class="extra-links">
+            <p>Already have an account? <a href="{{ route('register') }}">register</a></p>
+        </div>
     </div>
 
     <script>
