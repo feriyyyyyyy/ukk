@@ -16,7 +16,7 @@ body {
 
 /* Navigation Bar */
 nav {
-    background-color: #34495e;
+    background-color: #171e25;
     color: #fff;
     display: flex;
     justify-content: space-between;
@@ -47,7 +47,7 @@ nav {
 }
 
 .menu button {
-    background-color: #2980b9;
+    background-color: #161d22;
     border: none;
     color: white;
     padding: 10px 15px;
@@ -58,7 +58,7 @@ nav {
 }
 
 .menu button:hover {
-    background-color: #3498db;
+    background-color: #161c20;
 }
 
 .menu-dropdown {
@@ -105,7 +105,7 @@ h1 {
 }
 
 .add-program-btn a {
-    background-color: #27ae60;
+    background-color: #121413;
     color: white;
     padding: 12px 20px;
     border-radius: 5px;
@@ -115,7 +115,7 @@ h1 {
 }
 
 .add-program-btn a:hover {
-    background-color: #2ecc71;
+    background-color: #161b18;
 }
 
 /* Table Styling */
@@ -131,7 +131,7 @@ h1 {
 }
 
 .table th {
-    background-color: #34495e;
+    background-color: #191e24;
     color: white;
 }
 
@@ -147,11 +147,11 @@ h1 {
 }
 
 .btn-primary {
-    background-color: #2980b9;
+    background-color: #121a1f;
 }
 
 .btn-primary:hover {
-    background-color: #3498db;
+    background-color: #1b1e20;
 }
 
 .btn-danger {

@@ -7,10 +7,11 @@
     <title>Halaman Admin</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/admin.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/nav_admin.css') }}">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
-<body>
+<body class="bg-light">
     <!-- Navigation Bar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
@@ -46,82 +47,87 @@
         </div>
     </nav>
 
+    <!-- Hero Section -->
+    <header class="bg-gradient text-white text-center py-5 mb-4">
+        <h1>Selamat Datang, Admin</h1>
+        <p>Kelola data alumni dan laporan tracer study dengan mudah.</p>
+    </header>
+
     <!-- Main Content Section -->
     <main class="container py-4">
-        <!-- Welcome Section -->
-        <div class="text-center mb-5">
-            <h2 class="text-primary">Selamat Datang, Admin</h2>
-            <p>Kelola data alumni dan laporan tracer study dengan mudah.</p>
-        </div>
-
         <!-- Admin Actions Section -->
         <section class="mb-5">
             <h3 class="text-center text-secondary mb-4">Kelola Data</h3>
             <div class="row g-3">
-                <div class="col-md-3">
-                    <button class="btn btn-primary w-100" onclick="window.location='{{ route('sekolah.index') }}';">Kelola Sekolah</button>
+                <!-- Card Layout for Actions -->
+                <div class="col-md-4">
+                    <div class="card shadow-sm border-light">
+                        <div class="card-body text-center">
+                            <i class="bi bi-people-fill mb-3" style="font-size: 2rem;"></i>
+                            <h5 class="card-title">Kelola Sekolah</h5>
+                            <p class="card-text">Kelola program untuk pengembangan keterampilan dan banyak lagi.</p>
+                            <button class="btn btn-secondary w-100" onclick="window.location='{{ route('sekolah.index') }}';">Kelola Sekolah</button>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-3">
-                    <button class="btn btn-primary w-100" onclick="window.location='{{ route('program.index') }}';">Kelola Program Keahlian</button>
+
+                <div class="col-md-4">
+                    <div class="card shadow-sm border-light">
+                        <div class="card-body text-center">
+                            <i class="bi bi-clipboard-check mb-3" style="font-size: 2rem;"></i>
+                            <h5 class="card-title">Kelola Program Keahlian</h5>
+                            <p class="card-text">Kelola program untuk pengembangan keterampilan dan banyak lagi.</p>
+                            <button class="btn btn-secondary w-100" onclick="window.location='{{ route('program.index') }}';">Kelola Program Keahlian</button>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-3">
-                    <button class="btn btn-primary w-100" onclick="window.location='{{ route('konsentrasi.index') }}';">Kelola Konsentrasi Keahlian</button>
+
+                <div class="col-md-4">
+                    <div class="card shadow-sm border-light">
+                        <div class="card-body text-center">
+                            <i class="bi bi-bar-chart-line-fill mb-3" style="font-size: 2rem;"></i>
+                            <h5 class="card-title">Kelola Konsentrasi Keahlian</h5>
+                            <p class="card-text">Mengatur bidang keahlian dan bidang konsentrasi.</p>
+                            <button class="btn btn-secondary w-100" onclick="window.location='{{ route('konsentrasi.index') }}';">Kelola Konsentrasi Keahlian</button>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-3">
-                    <button class="btn btn-primary w-100"  onclick="window.location='{{ route('status-alumni.index') }}';">Kelola Status Alumni</button>
+
+                <!-- Additional Cards for Other Sections -->
+                <div class="col-md-4">
+                    <div class="card shadow-sm border-light">
+                        <div class="card-body text-center">
+                            <i class="bi bi-person-check-fill mb-3" style="font-size: 2rem;"></i>
+                            <h5 class="card-title">Kelola Status Alumni</h5>
+                            <p class="card-text">Kelola tahun kelulusan untuk pelacakan alumni.</p>
+                            <button class="btn btn-secondary w-100" onclick="window.location='{{ route('status-alumni.index') }}';">Kelola Status Alumni</button>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-3">
-                    <button  class="btn btn-primary w-100" onclick="window.location='{{ route('tahun-lulus.index') }}';">Kelola Tahun Lulus</button>
+
+                <div class="col-md-4">
+                    <div class="card shadow-sm border-light">
+                        <div class="card-body text-center">
+                            <i class="bi bi-calendar-event-fill mb-3" style="font-size: 2rem;"></i>
+                            <h5 class="card-title">Kelola Tahun Lulus</h5>
+                            <p class="card-text">Kelola tahun kelulusan untuk pelacakan alumni.</p>
+                            <button class="btn btn-secondary w-100" onclick="window.location='{{ route('tahun-lulus.index') }}';">Kelola Tahun Lulus</button>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-3">
-                    <button class="btn btn-primary w-100" onclick="window.location='{{ route('bidang.index') }}';">Kelola Bidang Keahlian</button>
+
+                <div class="col-md-4">
+                    <div class="card shadow-sm border-light">
+                        <div class="card-body text-center">
+                            <i class="bi bi-award-fill mb-3" style="font-size: 2rem;"></i>
+                            <h5 class="card-title">Kelola Bidang Keahlian</h5>
+                            <p class="card-text">Kelola bidang keterampilan profesional.</p>
+                            <button class="btn btn-secondary w-100" onclick="window.location='{{ route('bidang.index') }}';">Kelola Bidang Keahlian</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
-
-   
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script>
-    const configChart = (ctx, label, data, colors) => {
-        new Chart(ctx, {
-            type: 'doughnut', // Ubah menjadi doughnut atau pie sesuai kebutuhan
-            data: {
-                labels: ['2018', '2019', '2020', '2021', '2022'],
-                datasets: [{
-                    label: label,
-                    data: data,
-                    backgroundColor: colors, // Warna untuk tiap bagian
-                    borderColor: ['#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff'], // Border putih untuk tiap segmen
-                    borderWidth: 2,
-                    hoverOffset: 10
-                }]
-            },
-            options: {
-                responsive: true,
-                plugins: {
-                    legend: {
-                        position: 'top',
-                    },
-                    tooltip: {
-                        callbacks: {
-                            label: function(tooltipItem) {
-                                return tooltipItem.label + ': ' + tooltipItem.raw;
-                            }
-                        }
-                    }
-                }
-            }
-        });
-    };
-
-    // Warna pastel untuk diagram
-    const alumniColors = ['#FFB3BA', '#FFCC99', '#FF9966', '#FF6699', '#FF3366'];
-    const pekerjaanColors = ['#B3E5FC', '#81D4FA', '#4FC3F7', '#29B6F6', '#0288D1'];
-
-    configChart(document.getElementById('chartAlumni').getContext('2d'), 'Alumni', [120, 150, 200, 250, 300], alumniColors);
-    configChart(document.getElementById('chartPekerjaan').getContext('2d'), 'Pekerjaan', [80, 100, 150, 200, 250], pekerjaanColors);
-</script>
-
     </main>
 
     <!-- Footer Section -->
@@ -138,28 +144,7 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        const configChart = (ctx, label, data, color) => {
-            new Chart(ctx, {
-                type: 'line',
-                data: {
-                    labels: ['2018', '2019', '2020', '2021', '2022'],
-                    datasets: [{
-                        label: label,
-                        data: data,
-                        borderColor: color,
-                        backgroundColor: `${color}33`,
-                        fill: true,
-                        tension: 0.4
-                    }]
-                },
-                options: { responsive: true }
-            });
-        };
-
-        configChart(document.getElementById('tracerChart').getContext('2d'), 'Jumlah Alumni', [120, 150, 200, 250, 300], 'rgba(75, 192, 192, 1)');
-        configChart(document.getElementById('tracerChart-kerja').getContext('2d'), 'Jumlah Alumni Bekerja', [80, 100, 150, 200, 250], 'rgba(255, 99, 132, 1)');
-    </script>
+  
 </body>
 
 </html>

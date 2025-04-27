@@ -11,12 +11,12 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
         }
 
         /* Main body styling */
         body {
-            font-family: 'Arial', sans-serif;
-            background-color: #ecf0f1;
+            background-color: #d3d3d3; /* Warna abu-abu */
             color: #333;
             display: flex;
             justify-content: center;
@@ -26,76 +26,76 @@
         }
 
         /* Container for the form */
-        .form {
-            background-color: #fff;
+        .form-container {
+            background-color: #f0f0f0; /* Warna abu-abu terang */
             width: 100%;
-            max-width: 600px;
+            max-width: 500px;
             padding: 30px;
-            border-radius: 8px;
+            border-radius: 10px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             text-align: center;
         }
 
         /* Form header */
         h1 {
-            font-size: 28px;
+            font-size: 26px;
             margin-bottom: 20px;
             color: #2c3e50;
             font-weight: bold;
         }
 
         /* Form group (label and input field) */
-        .form div {
-            margin-bottom: 20px;
+        .form-group {
+            margin-bottom: 15px;
             text-align: left;
         }
 
-        .form label {
+        .form-group label {
             display: block;
             font-size: 16px;
             font-weight: bold;
-            color: #34495e;
-            margin-bottom: 8px;
+            color: #333;
+            margin-bottom: 5px;
         }
 
-        .form input {
+        .form-group input {
             width: 100%;
-            padding: 12px;
+            padding: 10px;
             font-size: 16px;
-            border: 1px solid #ccc;
-            border-radius: 6px;
-            margin-top: 5px;
+            border: 1px solid #bbb;
+            border-radius: 5px;
+            background: #fff;
         }
 
         /* Styling for the submit button */
-        button {
-            background-color: #1abc9c;
+        .btn-update {
+            background-color: #555; /* Abu-abu gelap */
             color: white;
-            padding: 14px 28px;
+            padding: 12px;
             font-size: 18px;
             border: none;
             border-radius: 6px;
             cursor: pointer;
             transition: background-color 0.3s ease;
-            margin-top: 20px;
+            width: 100%;
+            margin-top: 10px;
         }
 
-        button:hover {
-            background-color: #16a085;
+        .btn-update:hover {
+            background-color: #777;
         }
 
         /* Responsiveness */
         @media (max-width: 600px) {
-            .form {
+            .form-container {
                 padding: 20px;
-                width: 100%;
             }
 
             h1 {
                 font-size: 24px;
             }
 
-            button {
+            .btn-update {
                 width: 100%;
             }
         }
@@ -103,27 +103,27 @@
 </head>
 <body>
 
-    <div class="form">
+    <div class="form-container">
         <h1>Edit Konsentrasi Keahlian</h1>
         <form action="{{ route('konsentrasi.update', $konsentrasiKeahlian->id_konsentrasi_keahlian) }}" method="POST">
             @csrf
             @method('PUT')
-            <div>
+            <div class="form-group">
                 <label for="id_program_keahlian">ID Program Keahlian</label>
                 <input type="number" id="id_program_keahlian" name="id_program_keahlian"
                     value="{{ $konsentrasiKeahlian->id_program_keahlian }}" required>
             </div>
-            <div>
+            <div class="form-group">
                 <label for="kode_konsentrasi_keahlian">Kode Konsentrasi</label>
                 <input type="text" id="kode_konsentrasi_keahlian" name="kode_konsentrasi_keahlian"
                     value="{{ $konsentrasiKeahlian->kode_konsentrasi_keahlian }}" required>
             </div>
-            <div>
+            <div class="form-group">
                 <label for="konsentrasi_keahlian">Nama Konsentrasi</label>
                 <input type="text" id="konsentrasi_keahlian" name="konsentrasi_keahlian"
                     value="{{ $konsentrasiKeahlian->konsentrasi_keahlian }}" required>
             </div>
-            <button type="submit" class="btn btn-primary">Update</button>
+            <button type="submit" class="btn-update">Update</button>
         </form>
     </div>
 

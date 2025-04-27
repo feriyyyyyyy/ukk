@@ -1,160 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <style>
-        body {
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
             font-family: 'Poppins', sans-serif;
-            background-image: url(/images/logo.png);
-            height: 100vh;
+        }
+
+        body {
             display: flex;
             justify-content: center;
             align-items: center;
-            color: #fff;
+            height: 100vh;
+            background: url('https://source.unsplash.com/1600x900/?city,night') no-repeat center center/cover;
         }
 
         .login-container {
-            background: #fff;
-            color: #333;
-            width: 350px;
-            padding: 30px;
+            background: rgba(50, 50, 50, 0.8);
+            backdrop-filter: blur(12px);
+            padding: 40px;
             border-radius: 12px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            width: 350px;
             text-align: center;
+            color: #f1f1f1;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .login-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
         }
 
         .login-container h2 {
             margin-bottom: 20px;
-            color: #1e90ff;
-            font-weight: bold;
+            font-weight: 600;
+            color: #d1d1d1;
         }
 
-        .login-container input {
-            width: calc(100% - 20px);
+        .input-group {
+            position: relative;
+            margin: 15px 0;
+        }
+
+        .input-group input {
+            width: 100%;
             padding: 12px;
-            margin: 10px 0;
-            border: 1px solid #ccc;
+            border: none;
             border-radius: 8px;
-            font-size: 14px;
-            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+            font-size: 16px;
+            outline: none;
+            background: rgba(200, 200, 200, 0.3);
+            color: #fff;
+            transition: background 0.3s, box-shadow 0.3s;
+        }
+
+        .input-group input::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .input-group input:focus {
+            background: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
         }
 
         .login-container button {
-            background: #1e90ff;
+            background: linear-gradient(135deg, #6d6d6d, #4d4d4d);
             color: #fff;
             padding: 12px;
             border: none;
             border-radius: 8px;
             cursor: pointer;
-            font-size: 16px;
+            font-size: 18px;
             width: 100%;
-            transition: background 0.3s;
+            transition: all 0.3s;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
         }
 
         .login-container button:hover {
-            background: #006bb3;
+            transform: scale(1.05);
+            background: linear-gradient(135deg, #4d4d4d, #2e2e2e);
         }
 
-        .login-container p {
-            margin: 20px 0;
-            font-size: 14px;
-            color: #666;
-        }
-
-        .social-login {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin: 15px 0;
-        }
-
-        .social-login img {
-            width: 40px;
-            height: 40px;
-            cursor: pointer;
-            transition: transform 0.2s;
-        }
-
-        .social-login img:hover {
-            transform: scale(1.1);
-        }
-
-        .login-container .extra-links {
+        .extra-links {
             margin-top: 15px;
             font-size: 14px;
         }
 
-        .login-container .extra-links a {
-            color: #1e90ff;
+        .extra-links a {
+            color: #b0b0b0;
             text-decoration: none;
             font-weight: bold;
         }
 
-        .login-container .extra-links a:hover {
-            text-decoration: underline;
-        }
-
-        .show-password {
-            display: flex;
-            align-items: center;
-            justify-content: flex-end;
-            font-size: 14px;
-            margin-top: -8px;
-        }
-
-        .show-password input {
-            margin-left: 5px;
-        }
-        .register-container .extra-links {
-            margin-top: 10px;
-            font-size: 12px;
-        }
-
-        .register-container .extra-links a {
-            color: #0066cc;
-            text-decoration: none;
-        }
-
-        .register-container .extra-links a:hover {
+        .extra-links a:hover {
             text-decoration: underline;
         }
     </style>
 </head>
-
 <body>
     <div class="login-container">
         <h2>Login</h2>
         <form method="POST" action="{{ route('login') }}">
             @csrf
-            <div>
+            <div class="input-group">
                 <input type="email" name="email" placeholder="Email" required>
             </div>
-            <div>
+            <div class="input-group">
                 <input type="password" name="password" placeholder="Password" required>
-            </div>
-            <div class="show-password">
-                <label>
-                    <input type="checkbox" onclick="togglePassword()"> Show Password
-                </label>
             </div>
             <button type="submit">Login</button>
         </form>
         <div class="extra-links">
-            <p>Already have an account? <a href="{{ route('register') }}">register</a></p>
+            <p>Belum punya akun? <a href="{{ route('register') }}">Daftar</a></p>
         </div>
     </div>
-
-    <script>
-        function togglePassword() {
-            const passwordField = document.querySelector('input[name="password"]');
-            passwordField.type = passwordField.type === 'password' ? 'text' : 'password';
-        }
-    </script>
 </body>
-
 </html>

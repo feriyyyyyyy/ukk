@@ -8,15 +8,6 @@
     <link rel="stylesheet" href="{{ asset('css/kuliah.css') }}">
     <link rel="stylesheet" href="{{ asset('css/nav_admin.css') }}">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <style>
-        body {
-        
-             height: 800px;
-            display: flex;
-            flex-direction: column;
-            margin: 0;
-        }
-    </style>
 </head>
 
 <body>
@@ -61,6 +52,7 @@
             </ul>
         </div>
     </nav>
+
     <div class="container">
         <h2>Data Tracer Kuliah</h2>
         <table class="table">
@@ -100,11 +92,21 @@
             </tbody>
         </table>
     </div>
-    <script src="{{ asset('js/admin.js') }}"></script>
-    <footer class="footer">
-        
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024-2027 feri. Hak Cipta. All rights reserved.</p>
+            <div class="social-icons">
+                <a href="#" class="social-icon-1">
+                    <img src="{{ asset('images/tk.png') }}" alt="Logo">
+                </a>
+                <a href="#" class="social-icon">
+                    <img src="{{ asset('images/ig.jfif') }}" alt="Logo">
+                </a>
+            </div>
         </div>
     </footer>
+
 </body>
 
 </html>

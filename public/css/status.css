@@ -1,11 +1,11 @@
 /* status.css */
 :root {
-    --primary-color: #4CAF50;
-    --secondary-color: #4782B2;
-    --warning-color: #FF9800;
-    --background-color: #F9F9F9;
+    --primary-color: #171a18;
+    --secondary-color: #111518;
+    --warning-color: #181613;
+    --background-color: #140f0f5e;
     --text-color: #333;
-    --hover-color: #45a049;
+    --hover-color: #191a19;
     --shadow-color: rgba(0, 0, 0, 0.1);
     --button-radius: 6px;
 }
@@ -39,7 +39,7 @@ nav .profile .logo img {
 }
 
 nav .profile .username {
-    color: white;
+    color: rgb(214, 211, 211);
     margin-left: 10px;
     font-size: 18px;
 }
@@ -60,7 +60,7 @@ nav .menu .menu-item {
 }
 
 nav .menu .menu-item:hover {
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(10, 8, 8, 0.2);
 }
 
 nav .dropdown {
@@ -143,7 +143,7 @@ table {
 table th, table td {
     padding: 12px;
     text-align: left;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #080707;
 }
 
 table th {

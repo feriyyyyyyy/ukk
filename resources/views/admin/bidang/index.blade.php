@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,53 +9,32 @@
     <link rel="stylesheet" href="{{ asset('css/nav_admin.css') }}">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
+
 <body>
 
+    <!-- Navigation -->
     <nav>
         <div class="profile">
             <div class="logo">
                 <img src="{{ asset('images/logo.png') }}" alt="Logo">
             </div>
-            <div class="Username">
-                {{ Auth::user()->name }}           
-             </div>
+            <div class="username">
+                {{ Auth::user()->name }}
+            </div>
         </div>
         <div class="menu">
-            <div class="menu-item">
-                <button onclick="window.location='{{ route('admin.dashboard') }}';">Home</button>
-            </div>
-            <div class="menu-item">
-                <button onclick="window.location='{{ route('admin.alumni.index') }}';">Data Alumni</button>
-            </div>
-            <div class="menu-item">
-                <button onclick="window.location='{{ route('admin.TracerKuliah.index') }}';">Tracer Kuliah</button>
-            </div>
-            <div class="menu-item">
-                <button onclick="window.location='{{ route('admin.TracerKerja.index') }}';">Tracer Kerja</button>            
-            </div>
-        </div>
-        <div class="menu_dropdown">
-            <button class="burger-icon" id="burgerMenu">
-                <img src="{{ asset('icons/dropdown.png') }}" alt="Icons">
-            </button>
-            <ul class="dropdown" id="dropdownMenu">
-                <button onclick="window.location='{{ route('login') }}';" class="dropdown-icon">
-                    <img src="{{ asset('icons/dropdown.png') }}" alt="Icons">
-                </button>
-                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: inline;">
-                    @csrf
-                    <button type="submit" class="dropdown-icon">
-                        <img src="{{ asset('icons/logout.png') }}" alt="Logout Icon">
-                    </button>
-                </form>
-            </ul>
+            <button onclick="window.location='{{ route('admin.dashboard') }}';">Home</button>
+            <button onclick="window.location='{{ route('admin.alumni.index') }}';">Data Alumni</button>
+            <button onclick="window.location='{{ route('admin.TracerKuliah.index') }}';">Tracer Kuliah</button>
+            <button onclick="window.location='{{ route('admin.TracerKerja.index') }}';">Tracer Kerja</button>
         </div>
     </nav>
 
+    <!-- Main Content -->
     <div class="container">
         <h1>Daftar Bidang Keahlian</h1>
         <div class="tmbh">
-            <a href="{{ route('bidang.create') }}" class="btn btn-success">Tambah Bidang Keahlian</a>
+            <a href="{{ route('bidang.create') }}" class="btn">Tambah Bidang Keahlian</a>
         </div>
         <table class="table">
             <thead>
@@ -73,7 +53,7 @@
                     <td>{{ $bidang->bidang_keahlian }}</td>
                     <td>
                         <a href="{{ route('bidang.edit', $bidang->id_bidang_keahlian) }}" class="btn btn-primary">Edit</a>
-                        <form action="{{ route('bidang.destroy', $bidang->id_bidang_keahlian) }}" method="POST" style="display: inline-block;">
+                        <form action="{{ route('bidang.destroy', $bidang->id_bidang_keahlian) }}" method="POST" class="delete-form">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-danger">Hapus</button>
@@ -85,7 +65,6 @@
         </table>
     </div>
 
-    <script src="{{ asset('js/admin.js') }}"></script>
-   
 </body>
+
 </html>

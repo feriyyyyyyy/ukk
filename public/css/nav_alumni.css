@@ -1,159 +1,111 @@
-/* Reset some default styles */
-* {
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-}
-
-/* General Layout */
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f4f7fb;
+    background-color: #f5f5f5;
     color: #333;
-    line-height: 1.6;
 }
 
 /* Navigation */
 nav {
-    background-color: #2c3e50;
-    color: white;
+    background-color: #3e4d8f;
+    padding: 15px 20px;
     display: flex;
     justify-content: space-between;
-    padding: 20px;
     align-items: center;
 }
 
-nav .profile {
+nav .nav-content {
     display: flex;
     align-items: center;
 }
 
-nav .profile .logo img {
+nav .logo img {
     width: 40px;
+    height: 40px;
     margin-right: 10px;
 }
 
-nav .menu {
-    display: flex;
+nav .username {
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    margin-right: 20px;
 }
 
 nav .menu button {
-    background-color: #34495e;
+    background-color: transparent;
     color: white;
-    padding: 10px 15px;
-    margin: 0 5px;
     border: none;
+    padding: 10px 15px;
+    margin: 0 8px;
+    font-size: 16px;
     cursor: pointer;
-    transition: background-color 0.3s;
 }
 
 nav .menu button:hover {
-    background-color: #1abc9c;
+    background-color: #004a99;
+    border-radius: 5px;
 }
 
-/* Dropdown Menu */
-.menu-dropdown .dropdown {
-    display: none;
+/* Main Content */
+.content {
+    margin: 40px auto;
+    width: 80%;
+    max-width: 1000px;
 }
 
-.menu-dropdown:hover .dropdown {
-    display: block;
+.content .welcome {
+    text-align: center;
+    margin-bottom: 30px;
 }
 
-.menu-dropdown .dropdown button {
-    background: transparent;
-    border: none;
-    cursor: pointer;
-}
-
-/* Top Content */
-.top-content {
-    padding: 40px 20px;
-    display: flex;
-    justify-content: space-between;
-}
-
-.top-content .info {
-    max-width: 50%;
-}
-
-.top-content .info h2 {
+.content .welcome h2 {
     font-size: 28px;
-    color: #2c3e50;
-    margin-bottom: 10px;
+    color: #333;
 }
 
-.top-content .info h3 {
-    font-size: 18px;
-    color: #7f8c8d;
-}
-
-.top-content .info h3 span {
-    font-weight: bold;
-}
-
-/* Profile Section */
-.info-profile .table-profile {
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    width: 300px;
-}
-
-.table-profile img {
-    width: 100px;
-    border-radius: 50%;
-    margin-bottom: 20px;
-}
-
-.profile-item {
-    margin-bottom: 10px;
-}
-
-.profile-item p {
-    font-size: 16px;
-    color: #34495e;
-}
-
-/* Chart Section */
-.charts-section {
+.content .profile-info {
     display: flex;
     justify-content: space-between;
-    padding: 40px 20px;
-}
-
-.chart-card {
-    background-color: white;
-    border-radius: 8px;
+    background-color: #fff;
     padding: 20px;
-    width: 48%;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
 }
 
-.chart-card h4 {
-    font-size: 20px;
-    color: #34495e;
-    margin-bottom: 10px;
+.content .profile-info .profile-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
 }
 
-.chart-card p {
-    font-size: 14px;
-    color: #7f8c8d;
+.content .profile-info .profile-details {
+    flex: 1;
+    padding-left: 20px;
+}
+
+.content .profile-info .profile-details p {
+    font-size: 16px;
+    line-height: 1.5;
 }
 
 /* Footer */
-.footer {
-    background-color: #2c3e50;
+footer {
+    background-color: #333c63;
     color: white;
-    padding: 20px;
     text-align: center;
+    padding: 20px;
 }
 
-.footer .social-icons a {
+footer .social-icons a {
     margin: 0 10px;
+    display: inline-block;
 }
 
-.footer .social-icons img {
-    width: 25px;
+footer .social-icons img {
+    width: 30px;
+    height: 30px;
 }

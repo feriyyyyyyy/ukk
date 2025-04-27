@@ -8,15 +8,6 @@
     <link rel="stylesheet" href="{{ asset('css/kerja.css') }}">
     <link rel="stylesheet" href="{{ asset('css/nav_admin.css') }}">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <style>
-        body {
-        
-             height: 800px;
-            display: flex;
-            flex-direction: column;
-            margin: 0;
-        }
-    </style>
 </head>
 
 <body>
@@ -84,7 +75,8 @@
                 @foreach ($tracerKerja as $key => $kerja)
                     <tr>
                         <td>{{ $key + 1 }}</td>
-                        <td>{{ $kerja->alumni ? $kerja->alumni->nama_depan . ' ' . $kerja->alumni->nama_belakang : 'Tidak Ditemukan' }}</td>                        <td>{{ $kerja->tracer_kerja_pekerjaan }}</td>
+                        <td>{{ $kerja->alumni ? $kerja->alumni->nama_depan . ' ' . $kerja->alumni->nama_belakang : 'Tidak Ditemukan' }}</td>
+                        <td>{{ $kerja->tracer_kerja_pekerjaan }}</td>
                         <td>{{ $kerja->tracer_kerja_nama }}</td>
                         <td>{{ $kerja->tracer_kerja_jabatan }}</td>
                         <td>{{ $kerja->tracer_kerja_status }}</td>
@@ -104,10 +96,13 @@
             </tbody>
         </table>
     </div>
-    <script src="{{ asset('js/admin.js') }}"></script>
-    <footer class="footer">
-       
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024-2027 feri. Hak Cipta. All rights reserved.</p>
+        </div>
     </footer>
+
 </body>
 
 </html>

@@ -81,7 +81,7 @@ a {
 
 .btn-add {
     padding: 10px 25px;
-    background-color: #4782B2;
+    background-color: #0a0b0c;
     color: white;
     border-radius: 5px;
     font-size: 16px;
@@ -92,7 +92,7 @@ a {
 }
 
 .btn-add:hover {
-    background-color: #70BFFF;
+    background-color: #191b1d;
 }
 
 /* Table Section */
@@ -117,7 +117,7 @@ a {
 }
 
 .sekolah-table th {
-    background-color: #4782B2;
+    background-color: #262829;
     color: white;
 }
 
@@ -135,11 +135,11 @@ a {
 }
 
 .sekolah-table .btn-edit {
-    background-color: #007BFF;
+    background-color: #707479;
 }
 
 .sekolah-table .btn-edit:hover {
-    background-color: #0056b3;
+    background-color: #8b9197;
 }
 
 .sekolah-table .btn-delete {

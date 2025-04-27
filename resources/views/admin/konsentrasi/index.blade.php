@@ -17,7 +17,7 @@
             <div class="logo">
                 <img src="{{ asset('images/logo.png') }}" alt="Logo">
             </div>
-            <div class="Username">{{ Auth::user()->name }}</div>
+            <div class="username">{{ Auth::user()->name }}</div>
         </div>
         <div class="menu">
             <button onclick="window.location='{{ route('admin.dashboard') }}';">Home</button>
@@ -29,8 +29,8 @@
 
     <div class="container">
         <h1>Daftar Konsentrasi Keahlian</h1>
-        <div class="tmbh">
-            <a href="{{ route('konsentrasi.create') }}">Tambah Baru</a>
+        <div class="tambah">
+            <a href="{{ route('konsentrasi.create') }}" class="btn-add">Tambah Baru</a>
         </div>
         <table>
             <thead>
@@ -50,11 +50,11 @@
                     <td>{{ $item->kode_konsentrasi_keahlian }}</td>
                     <td>{{ $item->konsentrasi_keahlian }}</td>
                     <td>
-                        <a href="{{ route('konsentrasi.edit', $item->id_konsentrasi_keahlian) }}" class="btn btn-primary">Edit</a>
+                        <a href="{{ route('konsentrasi.edit', $item->id_konsentrasi_keahlian) }}" class="btn-edit">Edit</a>
                         <form action="{{ route('konsentrasi.destroy', $item->id_konsentrasi_keahlian) }}" method="POST" style="display:inline-block;">
                             @csrf
                             @method('DELETE')
-                            <button type="submit" class="btn btn-danger">Hapus</button>
+                            <button type="submit" class="btn-delete">Hapus</button>
                         </form>
                     </td>
                 </tr>

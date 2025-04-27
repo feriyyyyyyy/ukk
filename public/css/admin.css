@@ -1,161 +1,205 @@
-body {
-    font-family: Arial, sans-serif;
+/* Basic Reset */
+body, h1, h3, p, footer {
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    font-family: 'Arial', sans-serif;
 }
 
-.nav {
-    background-color: #333;
-    color: white;
-    padding: 15px;
+/* Body Background */
+body {
+    background-color: #110c0c; /* Light gray background */
 }
 
-.nav-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    max-width: 1200px;
-    margin: 0 auto;
+/* Navbar Styling */
+nav.navbar {
+    background-color: #333; /* Dark gray navbar */
 }
 
-.logo img {
-    height: 40px;
+nav.navbar .navbar-brand {
+    color: rgb(167, 161, 161);
+    font-size: 1.2rem;
 }
 
-.username {
-    font-size: 18px;
-    margin-right: 20px;
+nav.navbar .navbar-nav .nav-link {
+    color: #ddd; /* Light gray text */
 }
 
-.burger-menu {
-    display: none;
-    background: none;
-    border: none;
+nav.navbar .navbar-nav .nav-link:hover {
+    color: #fff; /* White on hover */
 }
 
-.menu {
-    display: flex;
-    gap: 15px;
+/* Hero Section Styling */
+header {
+    background-color: #18191a; /* Medium gray for header */
 }
 
-.menu li {
-    list-style: none;
+header h1 {
+    font-size: 2rem;
 }
 
-.menu button {
-    background-color: #444;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    cursor: pointer;
+header p {
+    font-size: 1.1rem;
 }
 
-.menu button:hover {
-    background-color: #555;
+/* Main Content Section */
+.container {
+    padding-top: 30px;
 }
 
-.main-content {
-    max-width: 1200px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: white;
-    border-radius: 8px;
-}
-
-.welcome-section {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.welcome-message {
-    margin: 0 auto;
-    max-width: 600px;
-}
-
-.admin-actions-section h3 {
-    text-align: center;
-    margin-bottom: 10px;
-}
-
-.admin-actions-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 15px;
-}
-
-.admin-actions-grid button {
-    background-color: #007bff;
+section button {
+    background-color: #6c757d; /* Medium gray for buttons */
     color: white;
     border: none;
     padding: 10px;
+    font-size: 1rem;
     border-radius: 5px;
-    cursor: pointer;
-    text-align: center;
 }
 
-.admin-actions-grid button:hover {
-    background-color: #0056b3;
+section button:hover {
+    background-color: #5a6268; /* Darker gray on hover */
 }
 
-.charts-section {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
+/* Footer Styling */
+footer {
+    background-color: #333; /* Dark gray footer */
 }
 
-.chart-card {
-    background-color: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+footer p {
+    font-size: 1rem;
 }
 
-.chart-card h3 {
-    margin-top: 0;
+footer a {
+    color: white;
+    text-decoration: none;
 }
 
-.footer {
-    background-color: #333;
+footer a:hover {
+    color: #ccc;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    section button {
+        font-size: 0.9rem;
+        padding: 8px;
+    }
+}
+/* Basic Reset */
+body, h1, h3, p, footer {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Body Background */
+body {
+    background-color: #f4f4f4; /* Light gray background */
+}
+
+/* Navbar Styling */
+nav.navbar {
+    background-color: #333; /* Dark gray navbar */
+}
+
+nav.navbar .navbar-brand {
+    color: white;
+    font-size: 1.2rem;
+}
+
+nav.navbar .navbar-nav .nav-link {
+    color: #ddd; /* Light gray text */
+}
+
+nav.navbar .navbar-nav .nav-link:hover {
+    color: #fff; /* White on hover */
+}
+
+/* Hero Section Styles */
+.hero-section {
+    background: linear-gradient(135deg, #007bff, #6610f2);
     color: white;
     text-align: center;
+    padding: 50px 20px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+}
+
+.hero-section h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.hero-section p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+header h1 {
+    font-size: 2rem;
+}
+
+header p {
+    font-size: 1.1rem;
+}
+
+/* Main Content Section */
+.container {
+    padding-top: 30px;
+}
+
+section button {
+    background-color: #6c757d; /* Medium gray for buttons */
+    color: white;
+    border: none;
     padding: 10px;
+    font-size: 1rem;
+    border-radius: 5px;
 }
 
-.footer-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+section button:hover {
+    background-color: #5a6268; /* Darker gray on hover */
 }
 
-.social-icons {
-    display: flex;
-    gap: 10px;
+/* Cards Styling */
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.social-icon img {
-    height: 30px;
-    width: 30px;
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
+.card-body i {
+    color: #6c757d;
+}
+
+.card-body i:hover {
+    color: #343a40;
+}
+
+/* Footer Styling */
+footer {
+    background-color: #333; /* Dark gray footer */
+}
+
+footer p {
+    font-size: 1rem;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #ccc;
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
-    .burger-menu {
-        display: block;
-    }
-
-    .menu {
-        display: none;
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .menu.show {
-        display: flex;
-    }
-
-    .charts-section {
-        grid-template-columns: 1fr;
+    section button {
+        font-size: 0.9rem;
+        padding: 8px;
     }
 }

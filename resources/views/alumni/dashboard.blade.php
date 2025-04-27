@@ -7,96 +7,54 @@
     <title>Halaman Alumni</title>
     <link rel="stylesheet" href="{{ asset('css/nav_alumni.css') }}">
     <link rel="stylesheet" href="{{ asset('css/alumni.css') }}">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 <body>
 
     <!-- Navigation -->
     <nav>
-        <div class="profile">
+        <div class="nav-content">
             <div class="logo">
                 <img src="{{ asset('images/logo.png') }}" alt="Logo">
             </div>
             <div class="username">{{ Auth::user()->name }}</div>
-        </div>
-        <div class="menu">
-            <button onclick="window.location='{{ route('alumni.dashboard') }}';">Home</button>
-            <button onclick="window.location='{{ route('alumni.Dataalumni.index') }}';">Data Alumni</button>
-            <button onclick="window.location='{{ route('tracerstudy.create') }}';">Tracer Study</button>
-            <button onclick="window.location='{{ route('alumni.tracerkuliah.create') }}';">Tracer Kuliah</button>
-            <button onclick="window.location='{{ route('alumni.tracerkerja.create') }}';">Tracer Kerja</button>
-            <button onclick="window.location='{{ route('testimoni.create') }}';">Testimoni</button>
-        </div>
-        <div class="menu-dropdown">
-            <button class="burger-icon" id="burgerMenu">
-                <img src="{{ asset('icons/dropdown.png') }}" alt="Icons">
-            </button>
-            <ul class="dropdown" id="dropdownMenu">
-                <form action="{{ route('alumni.profile.index') }}" method="GET">
-                    @csrf
-                    <button type="submit"><img src="{{ asset('icons/profile.png') }}" alt="Profile Icon"></button>
-                </form>
-                <form action="{{ route('logout') }}" method="POST">
-                    @csrf
-                    <button type="submit"><img src="{{ asset('icons/logout.png') }}" alt="Logout Icon"></button>
-                </form>
-            </ul>
+            <div class="menu">
+                <button onclick="window.location='{{ route('alumni.dashboard') }}';">Home</button>
+                <button onclick="window.location='{{ route('alumni.Dataalumni.index') }}';">Data Alumni</button>
+                <button onclick="window.location='{{ route('tracerstudy.create') }}';">Tracer Study</button>
+                <button onclick="window.location='{{ route('alumni.tracerkuliah.create') }}';">Tracer Kuliah</button>
+                <button onclick="window.location='{{ route('alumni.tracerkerja.create') }}';">Tracer Kerja</button>
+                <button onclick="window.location='{{ route('testimoni.create') }}';">Testimoni</button>
+            </div>
         </div>
     </nav>
 
     <!-- Welcome Section -->
-    <div class="top-content">
-        <div class="info">
+    <div class="content">
+        <div class="welcome">
             <h2>Selamat Datang, Alumni</h2>
-            <h3>Terimakasih telah bergabung di sistem Tracer Study</h3>
-            <h3><span>Mohon Lengkapi Data Diri Anda</span> untuk mendukung pengembangan Alumni di masa depan.</h3>
+            <p>Terimakasih telah bergabung di sistem Tracer Study.</p>
+            <p><strong>Mohon Lengkapi Data Diri Anda</strong> untuk mendukung pengembangan Alumni di masa depan.</p>
         </div>
-        <div class="info-profile">
-            <div class="table-profile">
-                <img src="{{ asset('images/profil.png') }}" alt="Profil" class="profile-img">
-                <div class="profil-item">
-                    @if ($alumnis)
-                        <p>Nama : {{ $alumnis->nama_depan }} {{ $alumnis->nama_belakang ?? '' }}</p>
-                    @else
-                        <p>Data alumni tidak ditemukan.</p>
-                    @endif
-                </div>
-                <div class="profil-item">
-                    <p>Email : {{ Auth::user()->email }}</p>
-                </div>
-                <div class="profil-item">
 
-                    @if ($alumnis)
-                        <p>Jurusan : {{ $alumnis->konsentrasiKeahlian->konsentrasi_keahlian }}</p>
-                    @else
-                        <p>Jurusan tidak ditemukan.</p>
-                    @endif
-
-                </div>
-                <div class="profil-item">
-                    @if ($alumnis)
-                        <p>Tahun Lulus : {{ $alumnis->tahunLulus->tahun_lulus }} </p>
-                    @else
-                        <p>Tahun Lulus tidak ditemukan.</p>
-                    @endif
-                </div>
-            </div>
+        <!-- Profile Information -->
+        <div class="profile-info">
+            <img src="{{ asset('images/profil.png') }}" alt="Profile Picture" class="profile-img">
+            <div class="profile-details">
+                <p><strong>Nama:</strong> {{ $alumnis->nama_depan ?? 'Data alumni tidak ditemukan.' }} {{ $alumnis->nama_belakang ?? '' }}</p>
+                <p><strong>Email:</strong> {{ Auth::user()->email }}</p>
+                <p><strong>Jurusan:</strong> {{ $alumnis->konsentrasiKeahlian->konsentrasi_keahlian ?? 'Jurusan tidak ditemukan.' }}</p>
+                <p><strong>Tahun Lulus:</strong> {{ $alumnis->tahunLulus->tahun_lulus ?? 'Tahun Lulus tidak ditemukan.' }}</p>
             </div>
         </div>
     </div>
+
     <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-content">
-            <p>&copy; 2024-2025 FERI.</p>
-            <div class="social-icons">
-                <a href="#" class="social-icon-1">
-                    <img src="{{ asset('images/tk.png') }}" alt="Logo">
-                </a>
-                <a href="#" class="social-icon">
-                    <img src="{{ asset('images/ig.jfif') }}" alt="Instagram Logo">
-                </a>
-            </div>
+    <footer>
+        <p>&copy; 2024-2025 FERI.</p>
+        <div class="social-icons">
+            <a href="#"><img src="{{ asset('images/tk.png') }}" alt="Logo"></a>
+            <a href="#"><img src="{{ asset('images/ig.jfif') }}" alt="Instagram Logo"></a>
         </div>
     </footer>
 

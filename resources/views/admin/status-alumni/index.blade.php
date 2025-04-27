@@ -65,17 +65,17 @@
                     <td>
                         <a href="{{ route('status-alumni.edit', $status->id_status_alumni) }}" class="btn btn-warning">Edit</a>
                         <form action="{{ route('status-alumni.destroy', $status->id_status_alumni) }}" method="POST" style="display:inline;">
-                @csrf
-                @method('DELETE')
-                <button type="submit" class="btn btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus status ini?')">Hapus</button>
-            </form>
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus status ini?')">Hapus</button>
+                        </form>
                     </td>
                 </tr>
                 @endforeach
             </tbody>
         </table>
     </div>
-   
+
     <script src="{{ asset('js/admin.js') }}"></script>
 </body>
 
